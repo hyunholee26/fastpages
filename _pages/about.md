@@ -3,12 +3,10 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+
 <p align="center">
 <img style="border: 0px solid gray;border-radius: 20px;-moz-border-radius: 20px;-khtml-border-radius: 20px;-webkit-border-radius: 20px;" 
      src="https://hyunholee26.github.io/assets/images/mypic.png"/> </p>
-
-<p style="font-size:16px;">
-
 
 ## Research Interests
 
