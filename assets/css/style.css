@@ -353,7 +353,7 @@ pre { margin-bottom: 1.5rem !important; }
 
 li h3, li h4 { margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
-li .post-meta-description { color: #585858; font-size: 15px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
+li .post-meta-description { color: #585858; font-size: 16px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
 details.description[open] summary::after { content: attr(data-open); }
 
@@ -371,15 +371,15 @@ details.description:not([open]) summary::after { content: attr(data-close); }
 
 h1:hover .anchor-link, h2:hover .anchor-link, h3:hover .anchor-link, h4:hover .anchor-link, h5:hover .anchor-link, h6:hover .anchor-link { opacity: 1; }
 
-.category-tags { margin-top: .25rem !important; margin-bottom: .25rem !important; font-size: 105%; }
+.category-tags { margin-top: .25rem !important; margin-bottom: .25rem !important; font-size: 16px; }
 
-.post-meta-title, .post-meta { margin-top: .25em !important; margin-bottom: .25em !important; font-size: 105%; }
+.post-meta-title, .post-meta { margin-top: .25em !important; margin-bottom: .25em !important; font-size: 16px; }
 
 .page-description { margin-top: .5rem !important; margin-bottom: .5rem !important; color: #585858; font-size: 115%; }
 
-.category-tags-icon { font-size: 75% !important; padding-left: 0.375em; opacity: 35%; }
+.category-tags-icon { font-size: 16px !important; padding-left: 0.375em; opacity: 35%; }
 
-.category-tags-link { color: #bb8181 !important; font-size: 13px !important; }
+.category-tags-link { color: #bb8181 !important; font-size: 16px !important; }
 
 .js-search-results { padding-top: 0.2rem; }
 
