@@ -10,18 +10,19 @@ Hello! My name is **Hyunho Lee**. I am a **Senior Manager at K-water** (Korea Wa
 
 My research focuses on **incorporating prior knowledge (especially physics-based knowledge) within data-driven models or learning process as an inductive bias, thereby achieving efficient learning from few samples or sparse observations and making the model easier to understand for scientists and non-machine-learning experts.** Also, I would like to research the applications of these techniques in water resources management such as the prediction of water level and dam inflow. For more information about my research experience, please refer to my **[Curriculum Vitae](https://hyunholee26.github.io/assets/files/cv_lhh_Feb_2022.pdf)** (PDF).
 
----
+
 ## Education
 
  - **KAIST (Korea Advanced Institute of Science and Technology)**, *Daejeon, Republic of Korea*
    - M.S in Computer Science
    - Mar. 2008 – Feb. 2010
 
+
  - **Ajou University**, *Suwon, Republic of Korea*
    - B.E in Information and Computer Engineering (intensive major course)
    - Mar. 2001 – Aug. 2007 
 
----
+
 ## Publication
 
  - J Park, **H Lee** (2020) “Prediction of high turbidity in rivers using LSTM algorithm”. *Journal of Korean Society of Water and Wastewater* 34 (1), 35-43, [https://doi.org/10.11001/jksww.2020.34.1.035](https://doi.org/10.11001/jksww.2020.34.1.035)
@@ -32,7 +33,7 @@ My research focuses on **incorporating prior knowledge (especially physics-based
  
  - **H Lee**, K Wohn (2010) “The layer-based vector texture for 3D rendering”. *Proceeding of 2010 Conference on the HCI Society of Korea*, 40-43
 
----
+
 ## Work Experience
  - **Korea Water Resources Corporation** (K-water), Daejeon, Korea, *Jul. 2010 – Present*
  
@@ -43,7 +44,7 @@ My research focuses on **incorporating prior knowledge (especially physics-based
    - **Manager**, Human Resources Management Dept., HR Management Team, *Jan. 2013 – Dec. 2017*
    - **Staff**, Information System Management Dept., Information Planning Team, *Jul. 2010 – Dec. 2012*
 
----
+
 ## Honors and Awards
  - **1st Place Prize**, 5th Bigdata analysis competition in K-water, *Oct. 2021*
  
@@ -51,11 +52,11 @@ My research focuses on **incorporating prior knowledge (especially physics-based
 
  - **Bronze Award**, ACM-ICPC (International Collegiate Programming Contest) Asia-Seoul Regional, *Nov. 2003*
 
----
+
 ## Certification
  - **Advanced Data Analytics Professional**, certificated by K-Data, Korea, *Apr. 2019* (pass rate: 2.76%)
 
----
+
 ## Professional Skills
 
  - **Programming Languages** : Python, R, C/C++, JAVA, ABAP (SAP)
