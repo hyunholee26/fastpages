@@ -14,13 +14,14 @@ My research focuses on **incorporating prior knowledge (especially physics-based
 ## Education
 
  - **KAIST (Korea Advanced Institute of Science and Technology)**, *Daejeon, Republic of Korea*
-   - M.S in Computer Science
-   - Mar. 2008 – Feb. 2010
+   + M.S in Computer Science
+   + Mar. 2008 – Feb. 2010  
+
 
 
  - **Ajou University**, *Suwon, Republic of Korea*
-   - B.E in Information and Computer Engineering (intensive major course)
-   - Mar. 2001 – Aug. 2007 
+   + B.E in Information and Computer Engineering (intensive major course)
+   + Mar. 2001 – Aug. 2007 
 
 
 ## Publication
@@ -37,12 +38,12 @@ My research focuses on **incorporating prior knowledge (especially physics-based
 ## Work Experience
  - **Korea Water Resources Corporation** (K-water), Daejeon, Korea, *Jul. 2010 – Present*
  
-   - **Senior Manager**, Digital Water Platform Dept., Water Platform Development Team, *Jan. 2021 – Jun.2022*
-   - **Manager**, Digital Innovation Dept., Big Data Business Team, *Jan. 2020 – Dec. 2020*
-   - **Manager**, Data Center Dept., Big Data Business Team, *Jan. 2019 – Dec. 2019*
-   - **Manager**, Water Data Collection and Analysis Dept., Water Data Integration Team, *Jan. 2018 – Dec. 2018*
-   - **Manager**, Human Resources Management Dept., HR Management Team, *Jan. 2013 – Dec. 2017*
-   - **Staff**, Information System Management Dept., Information Planning Team, *Jul. 2010 – Dec. 2012*
+   + **Senior Manager**, Digital Water Platform Dept., Water Platform Development Team, *Jan. 2021 – Jun.2022*
+   + **Manager**, Digital Innovation Dept., Big Data Business Team, *Jan. 2020 – Dec. 2020*
+   + **Manager**, Data Center Dept., Big Data Business Team, *Jan. 2019 – Dec. 2019*
+   + **Manager**, Water Data Collection and Analysis Dept., Water Data Integration Team, *Jan. 2018 – Dec. 2018*
+   + **Manager**, Human Resources Management Dept., HR Management Team, *Jan. 2013 – Dec. 2017*
+   + **Staff**, Information System Management Dept., Information Planning Team, *Jul. 2010 – Dec. 2012*
 
 
 ## Honors and Awards
