@@ -16,7 +16,6 @@ My research focuses on **incorporating prior knowledge (especially physics-based
  - **KAIST (Korea Advanced Institute of Science and Technology)**, *Daejeon, Republic of Korea*
    + M.S in Computer Science
    + Mar. 2008 – Feb. 2010  
-   
 <br/>
 
  - **Ajou University**, *Suwon, Republic of Korea*
