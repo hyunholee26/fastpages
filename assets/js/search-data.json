@@ -50,6 +50,14 @@
   
 
   
+      ,"page7": {
+          "title": "Test",
+          "content": "test .",
+          "url": "https://hyunholee26.github.io/fastpages/test/",
+          "relUrl": "/test/",
+          "date": ""
+      }
+      
   
 
   
@@ -59,7 +67,10 @@
   
 
   
-      ,"page10": {
+  
+
+  
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://hyunholee26.github.io/fastpages/robots.txt",
