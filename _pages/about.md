@@ -4,10 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-<p align="center">
-<img style="border: 0px solid gray;border-radius: 20px;-moz-border-radius: 20px;-khtml-border-radius: 20px;-webkit-border-radius: 20px;" 
-     src="https://hyunholee26.github.io/assets/images/mypic.png"/> </p>
-
 ## Research Interests
 
 My research focuses on **incorporating prior knowledge (especially physics-based knowledge) within data-driven models or learning process as an inductive bias, thereby achieving efficient learning from few samples or sparse observations and making the model easier to understand for scientists and non-machine-learning experts.** Also, I would like to research the applications of these techniques in water resources management such as the prediction of water level and dam inflow. For more information about my research experience, please refer to my **[Curriculum Vitae](https://hyunholee26.github.io/assets/files/cv_lhh_Feb_2022.pdf)** (PDF).
