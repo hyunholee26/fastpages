@@ -4,7 +4,6 @@ tags:
   - github
   - jekyll
 toc: true
-toc_sticky: true
 ---
 
 ## Step 0. Pre-requisites
