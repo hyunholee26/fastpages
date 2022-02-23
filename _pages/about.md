@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Research Interests
 
-My main research interests are below:
+Main research interests are below:
  - Physics-guided machine learning 
  - Spatiotemporal data mining (especially forecasting)
  - Uncertainty Estimation
