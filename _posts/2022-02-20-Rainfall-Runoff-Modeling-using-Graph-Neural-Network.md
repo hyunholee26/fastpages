@@ -1,10 +1,9 @@
 ---
-title: "Rainfall Runoff Modeling using Graph Neural Network"
-tags: 
-  - Graph Neural Network
-  - Rainfall-Runoff Modeling
 toc: true
-toc_sticky: true
+layout: post
+description: Rainfall Runoff Modeling using Graph Neural Network
+categories: [Graph Neural Network, Rainfall-Runoff Modeling]
+title: Rainfall Runoff Modeling using Graph Neural Network
 ---
 
 ## 1. [High-resolution rainfall-runoff modeling using graph neural network](https://arxiv.org/abs/2110.10833)
