@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: A Comprehensive Survey on Graph Neural Networks
 categories: [Graph Neural Network]
-title: A Comprehensive Survey on Graph Neural Networks
+title: A Comprehensive Survey on Graph Neural Networks  
 ---
 
 ## 0. Paper Link
