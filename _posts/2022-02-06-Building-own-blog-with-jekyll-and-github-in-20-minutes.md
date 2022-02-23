@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Building own blog with Jekyll and Github in 20 minutes
-categories: [github, jekyll]
+categories: [Github, Jekyll]
 title: Building own blog with Jekyll and Github in 20 minutes
 ---
 
