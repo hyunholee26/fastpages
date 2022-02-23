@@ -1,10 +1,9 @@
 ---
-title: "Rainfall Runoff Modeling using Recurrent Neural Network"
-tags: 
-  - Rainfall-Runoff Modeling
-  - Recurrent Neural Network
 toc: true
-toc_sticky: true
+layout: post
+description: Rainfall Runoff Modeling using Recurrent Neural Network
+categories: [Rainfall-Runoff Modeling, Recurrent Neural Network]
+title: Rainfall Runoff Modeling using Recurrent Neural Network
 ---
 
 ## 1. [Rainfall–runoff modelling using Long Short-Term Memory (LSTM) networks](https://hess.copernicus.org/articles/22/6005/2018/)
