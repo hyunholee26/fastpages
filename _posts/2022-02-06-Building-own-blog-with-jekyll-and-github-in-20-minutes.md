@@ -1,9 +1,9 @@
 ---
-title: "Building own blog with Jekyll and Github in 20 minutes"
-tags: 
-  - github
-  - jekyll
 toc: true
+layout: post
+description: Building own blog with Jekyll and Github in 20 minutes
+categories: [github, jekyll]
+title: Building own blog with Jekyll and Github in 20 minutes
 ---
 
 ## Step 0. Pre-requisites
