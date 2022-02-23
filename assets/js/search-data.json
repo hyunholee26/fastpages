@@ -37,8 +37,8 @@
         ,"post3": {
             "title": "Regarding Deep learning with Uncertainty Estimation",
             "content": "I will summarize serveral articles regarding deep learning with uncertainty estimation. Providing confidence intervals in regression problems is related to uncertainty estimation. A phrase that can express this well is quoted as follows. . We do a lot of regression, with everything from random forests to recurrent neural networks. And as good as our models are, we know they can never be perfect. Therefore, whenever we provide our customers with predictions, we also like to include a set of confidence intervals: what range around the prediction will the actual value fall within, with (e.g.) 80% confidence? . 1. A guide to generating probability distributions with neural networks . This article give the example code related to generate distribution of predicted value with cumstomed layer and loss function. | . 2. How to generate neural network confidence intervals with Keras . This article suggests same notion and implementation with Monte Carlo Dropout. Also, it gives the way to calculate optimal dropout rate. | .",
-            "url": "https://hyunholee26.github.io/fastpages/2022/02/13/Regarding-Deep-learning-with-Uncertainty-Estimation.html",
-            "relUrl": "/2022/02/13/Regarding-Deep-learning-with-Uncertainty-Estimation.html",
+            "url": "https://hyunholee26.github.io/fastpages/uncertainty%20estimation/2022/02/13/Regarding-Deep-learning-with-Uncertainty-Estimation.html",
+            "relUrl": "/uncertainty%20estimation/2022/02/13/Regarding-Deep-learning-with-Uncertainty-Estimation.html",
             "date": " • Feb 13, 2022"
         }
         
