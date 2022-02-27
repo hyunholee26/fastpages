@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: Steve Brunton's talks in youtube
 categories: [Physics Guided Deep Learning]
-title: Steve Brunton's talks in youtube
+title: Steve Brunton's talks in youtube 
 ---
 
 ## 1. [Sparse Identification of Nonlinear Dynamics (SINDy): Sparse Machine Learning Models 5 Years Later!](https://www.youtube.com/watch?v=NxAn0oglMVw)
