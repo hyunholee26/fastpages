@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Steve Brunton's talks in youtube
-categories: [Physics guided deeplearning]
+categories: [Physics Guided Deep Learning]
 title: Steve Brunton's talks in youtube
 ---
 
