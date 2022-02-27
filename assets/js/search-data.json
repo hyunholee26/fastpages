@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Sungyong Seo's talks in youtube",
-            "content": "1. Effective Feature Learning based on Deep Networks for Urban Heat Island Prediction . . I will summarize it later | . 2. Graph Networks with Physics-aware Knowledge Informed in Latent Space . . I will summarize it later | .",
+            "content": "1. Effective Feature Learning based on Deep Networks for Urban Heat Island Prediction . . I will summarize it later | . 2. Graph Networks with Physics-aware Knowledge Informed in Latent Space . . I will summarize it later | The topic of this paper is similar to my research interest. I consider that this paper could be the starting point of my research. | . 3. Sungyong Seo’s Google Scholar .",
             "url": "https://hyunholee26.github.io/fastpages/physics%20guided%20deep%20learning/2022/02/27/Sungyong-Seo-talks-in-youtube.html",
             "relUrl": "/physics%20guided%20deep%20learning/2022/02/27/Sungyong-Seo-talks-in-youtube.html",
             "date": " • Feb 27, 2022"
@@ -26,8 +26,8 @@
         ,"post2": {
             "title": "Steve Brunton's talks in youtube",
             "content": "1. Sparse Identification of Nonlinear Dynamics (SINDy): Sparse Machine Learning Models 5 Years Later! . . SINDy is a kind of solver to find equations governed dynamics by combining many terms sparsely. Also, he suggests 4~5 key questions to find the equation for dynamics in terms of data, combined terms, optimization, etc. | . 2. Deep Learning to Discover Coordinates for Dynamics: Autoencoders &amp; Physics Informed Machine Learning . . He explains that deep learning, especially deep autoencoder, is a method to discover proper coordinate systems for the dynamics. | .",
-            "url": "https://hyunholee26.github.io/fastpages/physics%20guided%20deeplearning/2022/02/24/Steve-Brunton-talks-in-youtube.html",
-            "relUrl": "/physics%20guided%20deeplearning/2022/02/24/Steve-Brunton-talks-in-youtube.html",
+            "url": "https://hyunholee26.github.io/fastpages/physics%20guided%20deep%20learning/2022/02/24/Steve-Brunton-talks-in-youtube.html",
+            "relUrl": "/physics%20guided%20deep%20learning/2022/02/24/Steve-Brunton-talks-in-youtube.html",
             "date": " • Feb 24, 2022"
         }
         
