@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Sungyong Seo's talks in youtube
-categories: [Physics guided deeplearning]
+categories: [Physics Guided Deep Learning]
 title: Sungyong Seo's talks in youtube
 ---
 
