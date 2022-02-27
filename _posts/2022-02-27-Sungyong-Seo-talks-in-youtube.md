@@ -13,3 +13,6 @@ title: Sungyong Seo's talks in youtube
 ## 2. [Graph Networks with Physics-aware Knowledge Informed in Latent Space](https://www.youtube.com/watch?v=60-EiCPUPWY)
  [![](http://img.youtube.com/vi/60-EiCPUPWY/0.jpg)](https://www.youtube.com/watch?v=60-EiCPUPWY)
  - I will summarize it later
+ - The topic of this paper is similar to my research interest. I consider that this paper could be the starting point of my research.
+
+## 3. [Sungyong Seo's Google Scholar](https://scholar.google.com/citations?hl=en&user=spYH0tEAAAAJ&view_op=list_works&sortby=pubdate)
