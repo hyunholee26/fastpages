@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Steve Brunton's talks in youtube",
-            "content": "1. Sparse Identification of Nonlinear Dynamics (SINDy): Sparse Machine Learning Models 5 Years Later! . . SINDy is a kind of solver to find equations governed dynamics by combining many terms sparsely. Also, he suggests 4~5 key questions to find the equation for dynamics in terms of data, combined terms, etc. | . 2. Deep Learning to Discover Coordinates for Dynamics: Autoencoders &amp; Physics Informed Machine Learning . . I will summarize it later | .",
+            "content": "1. Sparse Identification of Nonlinear Dynamics (SINDy): Sparse Machine Learning Models 5 Years Later! . . SINDy is a kind of solver to find equations governed dynamics by combining many terms sparsely. Also, he suggests 4~5 key questions to find the equation for dynamics in terms of data, combined terms, optimization, etc. | . 2. Deep Learning to Discover Coordinates for Dynamics: Autoencoders &amp; Physics Informed Machine Learning . . He explain deep learning, especially deep autoencoder, to descover proper coordinate system for certain dynamics. | .",
             "url": "https://hyunholee26.github.io/fastpages/physics%20guided%20deeplearning/2022/02/24/Steve-Brunton-talks-in-youtube.html",
             "relUrl": "/physics%20guided%20deeplearning/2022/02/24/Steve-Brunton-talks-in-youtube.html",
             "date": " • Feb 24, 2022"
