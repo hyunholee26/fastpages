@@ -73,5 +73,76 @@ title: Useful expressions in English
 - Are they different from Japanese chopsticks?
 - What is the difference between Korean chopsticks and Japanese chopsticks?
 - Korean chopstick are thinner and ***made of*** steel.
+- I am worried that (~할까봐 걱정하다)
+- I am worried because I haven't been feeling well these days.
+- Health is the most important things
+- What's the matter?
+- What's the problem?
+- My health is not as good as before
+- My health is not as good as it used to be
+- I am not as healthy as I used to be / before
+- I get tired easily
+- Do you exercise?
+  - work out : 근육운동
+- Since I started exercising, I have been feeling much(= a lot) better.
+- I have been exercising these days, and I love it so much.
+- I quit exercising because of the air is dirty.
+  - to 부정사 : ~ 하기 위해 멈추다(미래의미)
+  - -ing : ~ 해 오던 것을 멈추다(과거~미래)
+- I just exercise at home
+  - in the house : 물리적인 집 
+  - at home : 나의 생활 공간으로써의 집
+- Thirty minutes a day ***is*** enough.
+  - 시간이나 돈의 양은 단수 취급
+- You're right, the air pollution is just ***an excuse***.
+- I should try to lose weight.
+- I will get started today(on Tuesday)
+- How have you been, How are you doing?
+- I heard ***that you are moving to the US***. (제 3자로부터 들었을때)
+- It all happened so fast.
+- Things happened so suddenly
+- Everything happened all of sudden.
+- I still can't believe it
+- I am still trying to ***wrap my head around it***.(아직도 믿기지 않아)
+- Do you need a help?/ Can I help you? (상대방이 어떤 도움이 필요한지 알고 있을때, 보일때 사용)
+- Is there anything I can do for you?
+- Is there anything you need?
+- I am okay, I am fine : 호의에 대한 거절
+- That sounds good. : 좋아!
+- Thanks for saying that.
+- Thanks for asking (그렇게 말해줘서 고마워)
+- Let me know if there's anything I can do for you (you need)
+- Don't hesitate to ask if you need any help.
+- I hope everty thing goes well.
+- I wish you the best.
+- How do you like living in America?
+- I like the fact that the air is clean.
+- I like the clean air.
+- I miss my family and friend
+- I you have time, When you have time, If you can, When you can
+- come visit me
+- I will go see you
+- I wish I could (go visit you)
+- I am busy, I have a lot of work.
+- Have you heard of Squid game?
+- I have heard a lot about you
+- It is a lot of fun. (어떤 행동 동작이 재미있는)
+- It's really good, It's really interesting(영화등이 재미있을때)
+- I am binge-watching it
+- I am hooked after one episode.
+- I haven't seen it yet : 아직 안봤다
+  - see : 어떤 존재를 인지(aware)하다
+  - watch : 정지상태에서 무엇가를 지켜보다
+- It seems to be very popular among America.
+- The show is a big hit in American.
+- I can't watch it because I am too busy ***with***(because of를 쓰지 않는다) work and kids.
+- I am so busy that I can't watch it
+- I am too busy to watch it
+- Why don't you watch it after ***putting*** your kids to bed. 
+  - make : 억지로/강제로 하다
+- I am so tired at night that I go to bed at the same time as my kids
+- That's too bad. You would like it. : 안타깝다 니가 좋아할텐데
+-  
+
 
 [쓰는영어](https://www.youtube.com/watch?v=9d4r4joFPX0&list=PLdNhdf55dJ7MQkE7PAQKySq5BVJFCmp8C&index=5)
