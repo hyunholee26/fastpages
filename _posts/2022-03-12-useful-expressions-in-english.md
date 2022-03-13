@@ -145,4 +145,4 @@ title: Useful expressions in English
 -  
 
 
-[쓰는영어](https://www.youtube.com/watch?v=9d4r4joFPX0&list=PLdNhdf55dJ7MQkE7PAQKySq5BVJFCmp8C&index=5)
+[쓰는영어](https://www.youtube.com/watch?v=rkztwqpmtKQ&list=PLdNhdf55dJ7MQkE7PAQKySq5BVJFCmp8C&index=11)
