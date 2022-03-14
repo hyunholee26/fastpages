@@ -142,7 +142,13 @@ title: Useful expressions in English
   - make : 억지로/강제로 하다
 - I am so tired at night that I go to bed at the same time as my kids
 - That's too bad. You would like it. : 안타깝다 니가 좋아할텐데
--  
- 
+- I got my hair cut.
+- I got my car washed.
+- I got my coat cleaned
+- I got everything done.
+- I got my suit made.
+- I have to get my passport picture taken 
+- I will get your watch fixed
+- Would you mind 
 
-[쓰는영어](https://www.youtube.com/watch?v=rkztwqpmtKQ&list=PLdNhdf55dJ7MQkE7PAQKySq5BVJFCmp8C&index=11)
+[쓰는영어](https://www.youtube.com/watch?v=H7EgpURekJA&list=PLdNhdf55dJ7MRpBzn09u6FmRaf7b6mVZs&index=2)
