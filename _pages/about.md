@@ -25,7 +25,7 @@ My research focuses on **incorporating prior knowledge (especially physics-based
    + Mar. 2001 – Aug. 2007 
 
 
-## Publication [Google Scholar](https://scholar.google.com/citations?user=_BauogcAAAAJ&hl=en)
+## [Publication](https://scholar.google.com/citations?user=_BauogcAAAAJ&hl=en)
 
  - J Park, **H Lee** (2020) “Prediction of high turbidity in rivers using LSTM algorithm”. *Journal of Korean Society of Water and Wastewater* 34 (1), 35-43, [https://doi.org/10.11001/jksww.2020.34.1.035](https://doi.org/10.11001/jksww.2020.34.1.035)
  
