@@ -5,6 +5,34 @@ description: Useful expressions in English
 categories: [English]
 title: Useful expressions in English
 ---
+## 2022-03-23
+inform : 목적어로 정보를 전달하고자 하는 사람이 와야한다.
+inform 사람 of 정보
+inform 사람 that
+My daughter informed me that she was pregnant
+Please inform me of the result of the game
+
+notify : inform과 형태는 같으나 공식적으로 정보를 전달하는 경우 사용된다
+notify 사람 of 정보
+notify 사람 that
+The committee's decision will be notified to all employees
+Competition winners will be notified by post
+
+announce : 목적어로 전달하고자 하는 정보가 와야한다.
+He has announced his intention to retire
+Please announce to me the result of the game
+
+
+be familiar with : ~ 를 잘 알다
+ -> have some knowledge, knowing someone
+ = be acquainted with
+I am familiar with the reporter. 
+ 
+be used to : ~ 에 익숙하다
+ -> have some experience
+ = be accustomed to
+I am not used to eating alone.
+
 
 ## 2022-03-12
 - How is it ***going***(=coming along)?
