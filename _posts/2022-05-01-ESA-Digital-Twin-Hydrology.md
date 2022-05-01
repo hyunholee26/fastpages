@@ -12,4 +12,6 @@ title: ESA Digital Twin Hydrology
 ## 2. [Fully Automated DEM Generation using Satellite Imagery](https://youtu.be/vNZqP-1dF5g)
  [![](http://img.youtube.com/vi/vNZqP-1dF5g/0.jpg)](https://youtu.be/vNZqP-1dF5g)
  
+## 3. 
+ http://www.jlakes.org/uploadfile/news_images/hpkx/2020-11-12/2020WR027147.pdf
  
