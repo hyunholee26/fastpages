@@ -47,10 +47,15 @@ $$P(폐암) = 0.03 \space (=> P(정상) = 0.97), $$
 
 $$P(양성|폐암) = 0.99 \space (=> P(양성|정상) = 0.01)$$
 
+$$ $$
+
 - Bayes's theorem을 이용하면, 
+
 $$P(폐암|양성) = P(양성|폐암) \cdot P(폐암) / P(양성)$$
+
 $$P(양성) = P(양성|정상) \cdot P(정상) + P(양성|폐암) \cdot P(폐암)$$
-이며, 이를 계산하면, 
+
+- 이며, 이를 계산하면, 
 $P(양성) = 0.01 * 0.97 + 0.99 * 0.03 = 0.03939109$
 
 $$ $$
@@ -166,6 +171,14 @@ $$ $$
 
 $$ {\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\frac {1}{2}}({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})\right)}{\sqrt {(2\pi )^{k}|{\boldsymbol {\Sigma }}|}}}} $$
 
+- (참고) Mahalanobis distance
+> The Mahalanobis distance is a measure of the distance between a point P and a distribution D
+
+$$ \sqrt{({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})} $$
+
+- 만약,
+$\Sigma = \sigma^2 I$
+이라면, 즉, 각 변수간 공분산이 모두 0인 경우, 마할라노비스 거리는 유클리디안 거리와 같아집니다.
 
 ## 7. Covariance의 의미
 - Variance(분산) : 데이터가 펼쳐진 정도, 분산이 작으면, 데이터가 좁은영역에 모여있고, 분산이 크면 데이터가 넓은 영역에 퍼지는 형태를 보임
