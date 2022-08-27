@@ -34,10 +34,14 @@ $$ P(B | A) = \frac{P( A \cap B)}{P(A)}, \space then \space P(A \cap B) = P(B | 
 $$ so, P(A | B) \cdot P(B) = P(B | A) \cdot P(A) $$
 
 ## 3. Bayes's Theorem 예제
-우리나라 사람이 폐암에 걸릴 확률은 3%이고, 폐암을 99% 양성으로 진단하는 시약이 있다. 이 시약으로 폐암을 진단했을 때 양성반응을 보인 경우,
+- 우리나라 사람이 폐암에 걸릴 확률은 3%이고, 폐암을 99% 양성으로 진단하는 시약이 있다. 이 시약으로 폐암을 진단했을 때 양성반응을 보인 경우,
 실제 폐암에 걸렸을 확률은 얼마인가?
 
-- 우리가 구해야할 확률은 P(폐암|양성)이고, 문제에서 주어진 조건은, 
+$$ $$
+
+- 우리가 구해야할 확률은 
+$P(폐암|양성)$
+이고, 문제에서 주어진 조건은, 
 
 $$P(폐암) = 0.03 \space (=> P(정상) = 0.97), $$
 
@@ -73,7 +77,9 @@ $$\hat \theta_{MLE} = \underset{\theta}{\operatorname{argmax}} p(x_1, x_2, \dots
 
 $$ x_i \overset{i.i.d}{\sim} p(x|\theta), i = 1, \dots, n$$
 
-- Writing the density as p(x|θ), then the joint density decomposes as
+- Writing the density as 
+$p(x|θ)$
+, then the joint density decomposes as
 
 $$ p(x_1, x_2, \dots, x_n|\theta) = \prod_{i=1}^n p(x_i | \theta) $$
 
