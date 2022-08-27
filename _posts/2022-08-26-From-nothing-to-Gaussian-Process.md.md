@@ -3,10 +3,38 @@ toc: true
 layout: post
 description: From nothing to gaussian process
 categories: [gaussian process]
-title: From nothing to gaussian process (아무 지식이 없는 상태에서 Gaussian Process 까지 이해하기)
+title: From nothing to gaussian process (아무 지식이 없는 상태에서 Gaussian Process 까지 이해)
 ---
 
-## 1. Maximum likelihood estimation(MLE)
+
+## 1. Conditional probability
+> In probability theory, **[conditional probability](https://en.wikipedia.org/wiki/Conditional_probability)** is a measure of the probability of an event occurring, given that another event (by assumption, presumption, assertion or evidence) has already occurred.
+
+$$P(A | B) = \frac{P( A \cap B)}{P(B)}$$
+
+ - Independence(독립) : Two events A and B are independent if and only if their joint probability equals the product of their probabilities
+
+$$P(A \cap B) = P(A) \cdot P(B)$$
+
+ - 조건부 확률에서 P(A)와 P(B)가 독립인 경우, 
+$P(A | B) = \frac{P( A \cap B)}{P(B)} = \frac{P(A) \cdot P(B)}{P(B)} = P(A) $
+가 성립하며, 조건부 확률로 사건A에 대해 사건B가 주어지는 경우와 주어지지 않는 경우의 확률이 같은 경우를 의미하는 것으로 이해할 수 있다. 또한 다른말로 표현해보면, 전체에서 A가 발생할 확률과 사건B가 발생했을 때 사건A가 발생할 확률이 같은 경우를 의미하는 것으로도 이해할 수 있다.  
+
+## 2. Bayes's Theorem
+ - Bayes' theorem is stated mathematically as the following equation:
+
+$$ P(A|B) = \frac {P(B|A) \cdot P(A)} {P(B)}, where \space P(B)\neq 0. $$
+
+
+ - Bayes's Theorem은 conditonal probability로 부터 유도됩니다.
+
+$$ P(A | B) = \frac{P( A \cap B)}{P(B)}, \space then \space P(A \cap B) = P(A | B) \cdot P(B) $$
+
+$$ P(B | A) = \frac{P( A \cap B)}{P(A)}, \space then \space P(A \cap B) = P(B | A) \cdot P(A) $$
+
+$$ so, P(A | B) \cdot P(B) = P(B | A) \cdot P(A) $$
+
+## 3. Maximum likelihood estimation(MLE)
 > In statistics, **[maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)** is a method of estimating the parameters of an assumed probability distribution, given some observed data. This is achieved by maximizing a likelihood function so that, under the assumed statistical model, the observed data is most probable. The point in the parameter space that maximizes the likelihood function is called the maximum likelihood estimate. 
 > -- From wikipedia
 
@@ -60,3 +88,5 @@ $\displaystyle \frac{k}{n}$
 로 계산되며, n = 10, k = 2인 경우, 
 $\theta$
 는 0.2로 추정됩니다.
+
+
