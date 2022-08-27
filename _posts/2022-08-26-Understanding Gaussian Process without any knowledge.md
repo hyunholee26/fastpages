@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: From nothing to gaussian process
+description: Understanding Gaussian Process without any knowledge
 categories: [gaussian process]
-title: From nothing to gaussian process (아무 지식이 없는 상태에서 Gaussian Process 까지 이해)
+title: Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)
 ---
 
 
