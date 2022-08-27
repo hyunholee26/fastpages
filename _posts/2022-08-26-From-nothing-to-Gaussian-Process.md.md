@@ -48,6 +48,9 @@ $$P(폐암|양성) = P(양성|폐암) \cdot P(폐암) / P(양성)$$
 $$P(양성) = P(양성|정상) \cdot P(정상) + P(양성|폐암) \cdot P(폐암)$$
 이며, 이를 계산하면, 
 $P(양성) = 0.01 * 0.97 + 0.99 * 0.03 = 0.03939109$
+
+$$ $$
+
  - 따라서 
 $P(폐암|양성) = 0.99 * 0.03 / 0.03939109 = 0.7539776127037866$
 이며, 약 75%임.
@@ -113,13 +116,15 @@ $\theta_{MLE}$
 can overfit the data.
 - 관측데이터에 overfitting되지 않는 파라메터(모수) 추정 방법에 대한 문제를 제기하는 것 같습니다. 아마도 뒤에서 Bayesian 방법론을 적용할 듯합니다.
 
-## 6. Univariate and Multivariate Gaussian Distribution
-> In statistics, a **[normal distribution](https://en.wikipedia.org/wiki/Normal_distribution)** (also known as Gaussian, Gauss, or Laplace–Gauss distribution) is a type of continuous probability distribution for a real-valued random variable. The general form of its probability density function is
+## 6. Gaussian Distribution
+
+### 6-1. Univariate Gaussian Distribution
+
+- In statistics, a **[normal distribution](https://en.wikipedia.org/wiki/Normal_distribution)** (also known as Gaussian, Gauss, or Laplace–Gauss distribution) is a type of continuous probability distribution for a real-valued random variable. The general form of its probability density function is
 
 $$ f(x) = \frac {1}{\sigma \sqrt{2\pi}} e ^ {-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$$
 
-
-- random variable X is normally distributed with mean 
+   - random variable X is normally distributed with mean 
 $\mu$
 and standard deviation
 $\sigma$
@@ -128,7 +133,9 @@ $\displaystyle X\sim {\mathcal {N}}(\mu ,\sigma ^{2})$
 
 $$ $$
 
-- The multivariate normal distribution of a k-dimensional random vector
+### 6-2. Multivariate Gaussian Distribution
+
+- The **[multivariate normal distribution](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)** of a k-dimensional random vector
 $X =(X_{1},\dots ,X_{k})^{T}$
 can be written in the following notation:
 
@@ -147,16 +154,34 @@ $1 \leq i \leq k$
 and 
 $1 \leq j \leq k$
 
+$$ $$
+
+- The general form of its probability density function is
+
+$$ {\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\frac {1}{2}}({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})\right)}{\sqrt {(2\pi )^{k}|{\boldsymbol {\Sigma }}|}}}} $$
+
+
 ## 7. Covariance의 의미
 - Variance(분산) : 데이터가 펼쳐진 정도, 분산이 작으면, 데이터가 좁은영역에 모여있고, 분산이 크면 데이터가 넓은 영역에 퍼지는 형태를 보임
 
-$$\operatorname {var} (\mathbf {X} )=\operatorname {cov} (\mathbf {X} ,\mathbf {X} )=\operatorname {E} \left[(\mathbf {X} -\operatorname {E} [\mathbf {X} ])(\mathbf {X} -\operatorname {E} [\mathbf {X} ])^{\rm {T}}\right]$$
+$$\operatorname {var} (\mathbf {X} )=\operatorname {Cov} (\mathbf {X} ,\mathbf {X} )=\operatorname {E} \left[(\mathbf {X} -\operatorname {E} [\mathbf {X} ])(\mathbf {X} -\operatorname {E} [\mathbf {X} ])^{\rm {T}}\right]$$
 
 - Covariance(공분산) : 두 변수간 데이터가 퍼진 정도를 나타냄
 
-$$ \operatorname {cov} (\mathbf {X} ,\mathbf {Y} )=\operatorname {E} \left[(\mathbf {X} -\operatorname {E} [\mathbf {X} ])(\mathbf {Y} -\operatorname {E} [\mathbf {Y} ])^{\rm {T}}\right] $$
+$$ \operatorname {Cov} (\mathbf {X} ,\mathbf {Y} )=\operatorname {E} \left[(\mathbf {X} -\operatorname {E} [\mathbf {X} ])(\mathbf {Y} -\operatorname {E} [\mathbf {Y} ])^{\rm {T}}\right] $$
 
 - Covariance를 의미를 살펴보면,
+
+$$ Cov(X, Y) = \frac{(x_1 - \mu_x)(y_1 - \mu_y) + (x_2 - \mu_x)(y_2 - \mu_y) + \dots + (x_n - \mu_x)(y_n - \mu_y)}{n} $$
+
+- 이고, 
+$(x_i - \mu_x)(y_i - \mu_y)$
+가 양수인 경우는 각각 평균보다 크거나, 각각 평균보다 작은 경우이며, 음수인 경우 그 반대이다. 또한 평균으로부터 값이 멀어질 수록 그 값이 커지게 된다. 즉, 각 변수의 평균을 중심으로 분산의 방향을 확인할 수 있다. 데이터를 축에 plotting했을 때, Cov(X,Y)가 양수이면, 1,3분면에 분포하며, 음수이면 주로 2,4분면에 분포할 것으로 생각할 수 있다. 다만, 공분산은 각 변수의 단위에 따라 값의 크기가 달라져서 절대적인 값의 크기로 비교하는 것은 타당하지 않다.
+
+$$ $$
+- 그래서, 공분산을 각각의 표준편차로 나누어 그 값을 [-1, 1]로 변환하여 계산한 것을 correlation(상관계수)라고 한다.
+
+$$ {\displaystyle \rho _{X,Y}=\operatorname {corr} (X,Y)={\operatorname {Cov} (X,Y) \over \sigma _{X}\sigma _{Y}}={\operatorname {E} [(X-\mu _{X})(Y-\mu _{Y})] \over \sigma _{X}\sigma _{Y}},\quad {\text{if}}\ \sigma _{X}\sigma _{Y}>0.} $$
 
 ## 8. Linear Regression
 
