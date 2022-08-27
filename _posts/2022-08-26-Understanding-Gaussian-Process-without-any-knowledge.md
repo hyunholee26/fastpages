@@ -43,9 +43,9 @@ $$ $$
 $P(폐암|양성)$
 이고, 문제에서 주어진 조건은, 
 
-$$P(폐암) = 0.03 \space (=> P(정상) = 0.97), $$
+$$P(폐암) = 0.03 \space (\Rightarrow P(정상) = 0.97), $$
 
-$$P(양성|폐암) = 0.99 \space (=> P(양성|정상) = 0.01)$$
+$$P(양성|폐암) = 0.99 \space (\Rightarrow P(양성|정상) = 0.01)$$
 
 $$ $$
 
@@ -203,8 +203,41 @@ $$ $$
 $$ {\displaystyle \rho _{X,Y}=\operatorname {corr} (X,Y)={\operatorname {Cov} (X,Y) \over \sigma _{X}\sigma _{Y}}={\operatorname {E} [(X-\mu _{X})(Y-\mu _{Y})] \over \sigma _{X}\sigma _{Y}},\quad {\text{if}}\ \sigma _{X}\sigma _{Y}>0.} $$
 
 ## 8. Linear Regression
+- The linear regression model we focus on now has the form
 
-## 8. Probability View of Linear Regression
+$$ y_i \sim f(x_i;w) = w_0 + \sum_{j=1}^d x_{ij}w_j$$
+
+- Objective function is **Least Squares**
+
+$$ w_{LS} = \underset{w}{\operatorname{argmin}} \sum_{i=1}^n (y_i - f(x_i;w))^2 $$
+
+- Using vectors, this can be written:
+
+$$ L = \sum_{i=1}^n (y_i - x_i^T w)^2 $$
+
+$$ \nabla_{w} L = 0 \space \Rightarrow \space \sum_{i=1}^n \nabla_{w} (y_i^2 - 2w^T x_i y_i + w^T x_i x_i^T w) = 0 $$
+
+- solving gives,
+
+$$ - \sum_{i=1}^n 2 y_i x_i + (\sum_{i=1}^n 2 x_i x_i^T)w = 0 \space \Rightarrow \space w_{LS} = (\sum_{i=1}^n x_i x_i^T)^{-1}(\sum_{i=1}^n y_i x_i)$$
+
+- solving gives as matrix version,
+
+$$ w_{LS} = (X^T X)^{-1} X^T y $$
+
+## 8. Probabilistic View of Linear Regression
+
+### 8.1 Maximum likelihood for Gaussian linear regression
+
+- Plug
+$\mu = Xw$
+into the multivariate Gaussian distribution and solve for 
+$w$
+using maximum likelihood.
+
+$$ w_{ML} = \underset{w}{\operatorname{argmax}} ln p(y|\mu = Xw, \sigma^2) $$
+
+$$ = \underset{w}{\operatorname{argmax}}
 
 ## 9. MAP
 
