@@ -140,12 +140,9 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#7-covariance의-의미">7. Covariance의 의미</a></li>
 <li class="toc-entry toc-h2"><a href="#8-linear-regression">8. Linear Regression</a></li>
-<li class="toc-entry toc-h2"><a href="#8-probabilistic-view-of-linear-regression">8. Probabilistic View of Linear Regression</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#81-maximum-likelihood-for-gaussian-linear-regression">8.1 Maximum likelihood for Gaussian linear regression</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#9-map">9. MAP</a></li>
+<li class="toc-entry toc-h2"><a href="#9-gaussian-process">9. Gaussian process</a></li>
+<li class="toc-entry toc-h2"><a href="#10-gaussian-process-regression">10. Gaussian process regression</a></li>
+<li class="toc-entry toc-h1"><a href="#101-weight-space-view">10.1 Weight-space view</a></li>
 </ul><h2 id="1-conditional-probability">
 <a class="anchor" href="#1-conditional-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Conditional probability</h2>
 <blockquote>
@@ -488,27 +485,48 @@ $(x_i - \mu_x)(y_i - \mu_y)$
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>w</mi><mrow><mi>L</mi><mi>S</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><msup><mo stretchy="false">)</mo><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>X</mi><mi>T</mi></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">w_{LS} = (X^T X)^{-1} X^T y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1413em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></span>
 
-<h2 id="8-probabilistic-view-of-linear-regression">
-<a class="anchor" href="#8-probabilistic-view-of-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>8. Probabilistic View of Linear Regression</h2>
-
-<h3 id="81-maximum-likelihood-for-gaussian-linear-regression">
-<a class="anchor" href="#81-maximum-likelihood-for-gaussian-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.1 Maximum likelihood for Gaussian linear regression</h3>
+<h2 id="9-gaussian-process">
+<a class="anchor" href="#9-gaussian-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>9. Gaussian process</h2>
 
 <ul>
-  <li>Plug
-$\mu = Xw$
-into the multivariate Gaussian distribution and solve for 
-$w$
-using maximum likelihood.</li>
+  <li>A random process X(t) is a Gaussian process if for all k ∈ N for all t1, … ,tk , a random vector formed by X(1), … , X(tk) is jointly Gaussian.</li>
+  <li>The joint density is completely specified by</li>
+  <li>Mean: m(t) = E(X(t)), where m(·) is known as a mean function.</li>
+  <li>Covariance: k(t, s) = Cov(X(t), X(s)), where k(·,·) is known as a covariance function.</li>
+  <li>Notation:</li>
 </ul>
 
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>w</mi><mrow><mi>M</mi><mi>L</mi></mrow></msub><mo>=</mo><mi><munder><mo><mi mathvariant="normal">argmax</mi><mo>⁡</mo></mo><mi>w</mi></munder></mi><mi>l</mi><mi>n</mi><mi>p</mi><mo stretchy="false">(</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>μ</mi><mo>=</mo><mi>X</mi><mi>w</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">w_{ML} = \underset{w}{\operatorname{argmax}} ln p(y|\mu = Xw, \sigma^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span><span class="mord mathnormal mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.6444em;vertical-align:-0.8944em;"></span><span class="mord"><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4306em;"><span style="top:-2.2056em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop"><span class="mop"><span class="mord mathrm">argmax</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8944em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord mathnormal">p</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord">∣</span><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">Xw</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>X</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>G</mi><mi>P</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">(</mo><mi>t</mi><mo separator="true">,</mo><mi>s</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X(t) \sim GP(m(t), k(t,s))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span><span class="mclose">))</span></span></span></span></span>
 
-<p>$$ = \underset{w}{\operatorname{argmax}}</p>
+<ul>
+  <li>Example: X(t) = tA, where 
+$A \sim N(0,1)$
+and t ∈ R
+    <ul>
+      <li>Mean: m(t) = E(X(t)) = tE(A) = 0</li>
+      <li>Covariance: k(t,s) = E(tAsA) = ts</li>
+    </ul>
+  </li>
+  <li>
+<strong>Gaussian process</strong> and <strong>Gaussian process regression</strong> are different.</li>
+</ul>
 
-<h2 id="9-map">
-<a class="anchor" href="#9-map" aria-hidden="true"><span class="octicon octicon-link"></span></a>9. MAP</h2>
+<h2 id="10-gaussian-process-regression">
+<a class="anchor" href="#10-gaussian-process-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>10. Gaussian process regression</h2>
 
+<ul>
+  <li>A nonparametric Bayesian regression method using the properties of Gaussian processes.</li>
+  <li>Two views to interpret Gaussian process regression</li>
+  <li>Weight-space view</li>
+  <li>Function-space view</li>
+</ul>
+
+<h1 id="101-weight-space-view">
+<a class="anchor" href="#101-weight-space-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>10.1 Weight-space view</h1>
+
+<ul>
+  <li>
+</ul>
 
   </div><a class="u-url" href="/fastpages/gaussian%20process/2022/08/26/Understanding-Gaussian-Process-without-any-knowledge.html" hidden></a>
 </article>
