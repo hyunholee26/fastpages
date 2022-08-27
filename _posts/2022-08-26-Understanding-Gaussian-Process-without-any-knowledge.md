@@ -37,13 +37,13 @@ $$ so, P(A | B) \cdot P(B) = P(B | A) \cdot P(A) $$
 우리나라 사람이 폐암에 걸릴 확률은 3%이고, 폐암을 99% 양성으로 진단하는 시약이 있다. 이 시약으로 폐암을 진단했을 때 양성반응을 보인 경우,
 실제 폐암에 걸렸을 확률은 얼마인가?
 
- - 우리가 구해야할 확률은 P(폐암|양성)이고, 문제에서 주어진 조건은, 
+- 우리가 구해야할 확률은 P(폐암|양성)이고, 문제에서 주어진 조건은, 
 
 $$P(폐암) = 0.03 \space (=> P(정상) = 0.97), $$
 
 $$P(양성|폐암) = 0.99 \space (=> P(양성|정상) = 0.01)$$
 
- - Bayes's theorem을 이용하면, 
+- Bayes's theorem을 이용하면, 
 $$P(폐암|양성) = P(양성|폐암) \cdot P(폐암) / P(양성)$$
 $$P(양성) = P(양성|정상) \cdot P(정상) + P(양성|폐암) \cdot P(폐암)$$
 이며, 이를 계산하면, 
@@ -59,13 +59,13 @@ $P(폐암|양성) = 0.99 * 0.03 / 0.03939109 = 0.7539776127037866$
 > In statistics, **[maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)** is a method of estimating the parameters of an assumed probability distribution, given some observed data. This is achieved by maximizing a likelihood function so that, under the assumed statistical model, the observed data is most probable. The point in the parameter space that maximizes the likelihood function is called the maximum likelihood estimate. 
 > -- From wikipedia
 
- - MLE는 주어진 관측데이터(
+- MLE는 주어진 관측데이터(
 $x_1, x_2, \dots, x_n$
 )에 대해, 어떠한 분포를 가정했을 때, 관측데이터와 가장 유사한 분포를 만드는 파라메터(
 $\theta$
 )를 추정하는 방법입니다.
- - We pick the distribution family p(·), but don’t know the parameter θ
- - MLE를 수식으로 표현하면 아래와 같습니다.
+- We pick the distribution family p(·), but don’t know the parameter θ
+- MLE를 수식으로 표현하면 아래와 같습니다.
 
 $$\hat \theta_{MLE} = \underset{\theta}{\operatorname{argmax}} p(x_1, x_2, \dots, x_n|\theta)$$
 
@@ -87,14 +87,14 @@ $$\underset{\theta}{\operatorname{argmax}} g(y) = \underset{\theta}{\operatornam
 
 $$ ln(\prod_i f_i) = \sum_i ln(f_i) $$
 
- - 데이터 특징에 따라 선택할 수 있는 분포들은 binomial, poisson, gaussian 등이 있습니다. 
+- 데이터 특징에 따라 선택할 수 있는 분포들은 binomial, poisson, gaussian 등이 있습니다. 
 
 ## 5. MLE 예제
- - 공장에서 10개의 제품을 검사했을 때, 정상이 8개, 불량이 2개인 경우가 관측되었습니다. 이 경우, 우리는 binomial distribution을 가정할 수 있습니다. binomial distribution의 pmf는 다음과 같이 정의됩니다.
+- 공장에서 10개의 제품을 검사했을 때, 정상이 8개, 불량이 2개인 경우가 관측되었습니다. 이 경우, 우리는 binomial distribution을 가정할 수 있습니다. binomial distribution의 pmf는 다음과 같이 정의됩니다.
 
 $$ \Pr(K = k) = f(k;n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$ 
 
- - 파라메터 θ를 MLE로 추정해보면,
+- 파라메터 θ를 MLE로 추정해보면,
 
 $$ \nabla_{\theta} \prod_{i=1}^n p(x_i | \theta) = \nabla_{\theta} ln(\prod_{i=1}^n p(x_i | \theta)) = \nabla_{\theta} ln({n\choose k}\theta^k(1-\theta)^{n-k}) = 0$$
 
