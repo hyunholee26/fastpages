@@ -225,19 +225,31 @@ $$ - \sum_{i=1}^n 2 y_i x_i + (\sum_{i=1}^n 2 x_i x_i^T)w = 0 \space \Rightarrow
 
 $$ w_{LS} = (X^T X)^{-1} X^T y $$
 
-## 8. Probabilistic View of Linear Regression
+## 9. Gaussian process
 
-### 8.1 Maximum likelihood for Gaussian linear regression
+- A random process X(t) is a Gaussian process if for all k ∈ N for all t1, ... ,tk , a random vector formed by X(1), ... , X(tk) is jointly Gaussian.
+- The joint density is completely specified by
+ - Mean: m(t) = E(X(t)), where m(·) is known as a mean function.
+ - Covariance: k(t, s) = Cov(X(t), X(s)), where k(·,·) is known as a covariance function.
+- Notation:
 
-- Plug
-$\mu = Xw$
-into the multivariate Gaussian distribution and solve for 
-$w$
-using maximum likelihood.
+$$X(t) \sim GP(m(t), k(t,s))$$ 
 
-$$ w_{ML} = \underset{w}{\operatorname{argmax}} ln p(y|\mu = Xw, \sigma^2) $$
+- Example: X(t) = tA, where 
+$A \sim N(0,1)$
+and t ∈ R
+  - Mean: m(t) = E(X(t)) = tE(A) = 0
+  - Covariance: k(t,s) = E(tAsA) = ts
 
-$$ = \underset{w}{\operatorname{argmax}}
+- **Gaussian process** and **Gaussian process regression** are different.
 
-## 9. MAP
+## 10. Gaussian process regression
 
+- A nonparametric Bayesian regression method using the properties of Gaussian processes.
+- Two views to interpret Gaussian process regression
+ - Weight-space view
+ - Function-space view
+
+# 10.1 Weight-space view
+
+- 
