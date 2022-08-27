@@ -187,4 +187,5 @@ $$ {\displaystyle \rho _{X,Y}=\operatorname {corr} (X,Y)={\operatorname {Cov} (X
 
 ## 8. Probability View of Linear Regression
 
-## 9. MAP(
+## 9. MAP
+
