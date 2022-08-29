@@ -110,7 +110,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      12 min read
+      13 min read
     
 </span></p>
 
@@ -154,7 +154,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#93-point-estimates">9.3 Point estimates</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#10-random-process">10. Random process</a></li>
+<li class="toc-entry toc-h2"><a href="#10-random-process">10. Random process</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#101-definition">10.1 Definition</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#11-gaussian-process">11. Gaussian process</a></li>
 <li class="toc-entry toc-h2"><a href="#12-gaussian-process-regression">12. Gaussian process regression</a></li>
 <li class="toc-entry toc-h1"><a href="#121-weight-space-view">12.1 Weight-space view</a></li>
@@ -746,6 +750,19 @@ $y \sim N(Xw, \sigma^2I)$</p>
 
 <h2 id="10-random-process">
 <a class="anchor" href="#10-random-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>10. Random process</h2>
+
+<h3 id="101-definition">
+<a class="anchor" href="#101-definition" aria-hidden="true"><span class="octicon octicon-link"></span></a>10.1 Definition</h3>
+
+<ul>
+  <li>A random process is a collection of random variables usually indexed by time.
+    <ul>
+      <li>A continuous-time random process is a random process ${X(t),t \in J}$, where $J$ is an interval on the real line such as $[−1,1], [0,\infty), (-\infty, \infty)$, etc.</li>
+      <li>A discrete-time random process (or a random sequence) is a random process ${X(n)=X_n, \space n \in J}$, where $J$ is a countable set such as N or Z.</li>
+    </ul>
+  </li>
+  <li><strong>A random process is a random function of time.</strong></li>
+</ul>
 
 <h2 id="11-gaussian-process">
 <a class="anchor" href="#11-gaussian-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>11. Gaussian process</h2>
