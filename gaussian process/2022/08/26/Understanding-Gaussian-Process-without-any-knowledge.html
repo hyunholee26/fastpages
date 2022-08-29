@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기) | Hyunho’s Blog</title>
+<title>Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기) | Hyunho’s Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)" />
+<meta property="og:title" content="Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Understanding Gaussian Process without any knowledge" />
 <meta property="og:description" content="Understanding Gaussian Process without any knowledge" />
@@ -16,9 +16,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-26T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)" />
+<meta property="twitter:title" content="Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-26T00:00:00-05:00","datePublished":"2022-08-26T00:00:00-05:00","description":"Understanding Gaussian Process without any knowledge","headline":"Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/gaussian%20process/2022/08/26/Understanding-Gaussian-Process-without-any-knowledge.html"},"url":"https://hyunholee26.github.io/fastpages/gaussian%20process/2022/08/26/Understanding-Gaussian-Process-without-any-knowledge.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-26T00:00:00-05:00","datePublished":"2022-08-26T00:00:00-05:00","description":"Understanding Gaussian Process without any knowledge","headline":"Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/gaussian%20process/2022/08/26/Understanding-Gaussian-Process-without-any-knowledge.html"},"url":"https://hyunholee26.github.io/fastpages/gaussian%20process/2022/08/26/Understanding-Gaussian-Process-without-any-knowledge.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hyunholee26.github.io/fastpages/feed.xml" title="Hyunho's Blog" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -104,13 +104,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)</h1><p class="page-description">Understanding Gaussian Process without any knowledge</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-26T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)</h1><p class="page-description">Understanding Gaussian Process without any knowledge</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-26T00:00:00-05:00" itemprop="datePublished">
         Aug 26, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -127,6 +127,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#0-basic-concepts">0. Basic concepts</a></li>
 <li class="toc-entry toc-h2"><a href="#1-conditional-probability">1. Conditional probability</a></li>
 <li class="toc-entry toc-h2"><a href="#2-bayess-theorem">2. Bayes’s Theorem</a></li>
 <li class="toc-entry toc-h2"><a href="#3-bayess-theorem-예제">3. Bayes’s Theorem 예제</a></li>
@@ -140,10 +141,31 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#7-covariance의-의미">7. Covariance의 의미</a></li>
 <li class="toc-entry toc-h2"><a href="#8-linear-regression">8. Linear Regression</a></li>
-<li class="toc-entry toc-h2"><a href="#9-gaussian-process">9. Gaussian process</a></li>
-<li class="toc-entry toc-h2"><a href="#10-gaussian-process-regression">10. Gaussian process regression</a></li>
-<li class="toc-entry toc-h1"><a href="#101-weight-space-view">10.1 Weight-space view</a></li>
-</ul><h2 id="1-conditional-probability">
+<li class="toc-entry toc-h2"><a href="#9-map">9. MAP</a></li>
+<li class="toc-entry toc-h2"><a href="#10-bayesian-regression-concepts">10. Bayesian Regression Concepts</a></li>
+<li class="toc-entry toc-h2"><a href="#11-gaussian-process">11. Gaussian process</a></li>
+<li class="toc-entry toc-h2"><a href="#12-gaussian-process-regression">12. Gaussian process regression</a></li>
+<li class="toc-entry toc-h1"><a href="#121-weight-space-view">12.1 Weight-space view</a></li>
+</ul><h2 id="0-basic-concepts">
+<a class="anchor" href="#0-basic-concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>0. Basic concepts</h2>
+
+<blockquote>
+  <p>Sample space: the sample space of an experiment or random trial is the <strong>set of all possible outcomes or results of that experiment</strong>. An event is a subset of the sample space. 동전을 던졌을 때 나올 수 있는 결과는 앞면(H) 또는 뒷면(T)임, 발생할 수 있는 모든 경우의 수를 의미함.</p>
+</blockquote>
+
+<blockquote>
+  <p>Random Variable: A Random Variable is a mathematical formalization of a quantity or object which depends on random events. It is a mapping or a function from possible outcomes in a sample space to a measurable space(아마도 확률을 의미하는 것이 아닐지…), often the real numbers.</p>
+</blockquote>
+
+<blockquote>
+  <p>Probability: The probability of an event  A  is the sum of the probabilities of the individual outcomes of which it is composed. It is denoted  P(A).</p>
+</blockquote>
+
+<blockquote>
+  <p>Random Process: A random process is a collection of random variables usually indexed by time.</p>
+</blockquote>
+
+<h2 id="1-conditional-probability">
 <a class="anchor" href="#1-conditional-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Conditional probability</h2>
 <blockquote>
   <p>In probability theory, <strong><a href="https://en.wikipedia.org/wiki/Conditional_probability">conditional probability</a></strong> is a measure of the probability of an event occurring, given that another event (by assumption, presumption, assertion or evidence) has already occurred.</p>
@@ -485,8 +507,14 @@ $(x_i - \mu_x)(y_i - \mu_y)$
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>w</mi><mrow><mi>L</mi><mi>S</mi></mrow></msub><mo>=</mo><mo stretchy="false">(</mo><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><msup><mo stretchy="false">)</mo><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>X</mi><mi>T</mi></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">w_{LS} = (X^T X)^{-1} X^T y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1413em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></span>
 
-<h2 id="9-gaussian-process">
-<a class="anchor" href="#9-gaussian-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>9. Gaussian process</h2>
+<h2 id="9-map">
+<a class="anchor" href="#9-map" aria-hidden="true"><span class="octicon octicon-link"></span></a>9. MAP</h2>
+
+<h2 id="10-bayesian-regression-concepts">
+<a class="anchor" href="#10-bayesian-regression-concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>10. Bayesian Regression Concepts</h2>
+
+<h2 id="11-gaussian-process">
+<a class="anchor" href="#11-gaussian-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>11. Gaussian process</h2>
 
 <ul>
   <li>A random process X(t) is a Gaussian process if for all k ∈ N for all t1, … ,tk , a random vector formed by X(1), … , X(tk) is jointly Gaussian.</li>
@@ -511,18 +539,21 @@ and t ∈ R
 <strong>Gaussian process</strong> and <strong>Gaussian process regression</strong> are different.</li>
 </ul>
 
-<h2 id="10-gaussian-process-regression">
-<a class="anchor" href="#10-gaussian-process-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>10. Gaussian process regression</h2>
+<h2 id="12-gaussian-process-regression">
+<a class="anchor" href="#12-gaussian-process-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>12. Gaussian process regression</h2>
 
 <ul>
   <li>A nonparametric Bayesian regression method using the properties of Gaussian processes.</li>
-  <li>Two views to interpret Gaussian process regression</li>
-  <li>Weight-space view</li>
-  <li>Function-space view</li>
+  <li>Two views to interpret Gaussian process regression
+    <ul>
+      <li>Weight-space view</li>
+      <li>Function-space view</li>
+    </ul>
+  </li>
 </ul>
 
-<h1 id="101-weight-space-view">
-<a class="anchor" href="#101-weight-space-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>10.1 Weight-space view</h1>
+<h1 id="121-weight-space-view">
+<a class="anchor" href="#121-weight-space-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>12.1 Weight-space view</h1>
 
 <ul>
   <li>
