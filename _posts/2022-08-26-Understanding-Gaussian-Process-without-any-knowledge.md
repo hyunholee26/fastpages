@@ -381,6 +381,14 @@ $$ prior \rightarrow likelihood \rightarrow posterior $$
  
 ## 10. Random process
 
+### 10.1 Definition
+
+- A random process is a collection of random variables usually indexed by time.
+  - A continuous-time random process is a random process ${X(t),t \in J}$, where $J$ is an interval on the real line such as $[−1,1], [0,\infty), (-\infty, \infty)$, etc.
+  - A discrete-time random process (or a random sequence) is a random process ${X(n)=X_n, \space n \in J}$, where $J$ is a countable set such as N or Z.
+
+- **A random process is a random function of time.**
+
 ## 11. Gaussian process
 
 - A **random process** X(t) is a Gaussian process if for all k ∈ N for all t1, ... ,tk , a random vector formed by X(1), ... , X(tk) is jointly Gaussian.
