@@ -316,16 +316,7 @@ $y \sim N(Xw, \sigma^2I)$
 
 ### 9.1 Model
 
-- Have vector
-$y \in R^n$
-and covariates matrix
-$X \in R^{n \times d}$
-. The *i*th row of 
-$y$
-and 
-$X$
-correspond to the *i*th observation
-$(y_i, x_i)$
+- Have vector $y \in R^n$ and covariates matrix $X \in R^{n \times d}$. The *i*th row of $y$ and $X$ correspond to the *i*th observation $(y_i, x_i)$
 
 - In a Bayesian setting, we model this data as:
 
@@ -335,8 +326,7 @@ $$ Prior: \space w \sim N(0, \lambda^{-1}I) $$
 
   - Regarding prior distribution, although not covered here, see [conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior).
   
-- The unknow model variable is 
-$w \in R^d$
+- The unknow model variable is $w \in R^d$
   - The "likelihood model" says how well the observed data agrees with w.
   - The "model prior" is our prior belief (or constraints) on w.
 
@@ -344,22 +334,13 @@ $w \in R^d$
 
 ### 9.2 MAP(Maximum A Posteriori) solution
 
- - Let us assume that the prior for 
- $w$ 
- is Gaussian, 
- $w \sim N(0, \lambda^{-1}I)$
- . Then
+ - Let us assume that the prior for $w$ is Gaussian, $w \sim N(0, \lambda^{-1}I)$. Then
  
  $$ p(w) = (\frac{\lambda}{2 \pi})^{\frac{d}{2}}e^{-\frac{\lambda}{2}w^Tw}$$
  
- - We can now try to find a 
- $w$
- that satisfies both the data likelihood, and our prior conditions about 
- $w$
+ - We can now try to find a $w$ that satisfies both the data likelihood, and our prior conditions about $w$.
  
- - Maximum a posteriori (MAP) estimation seeks the most probable value
- $w$
- under the posterior:
+ - Maximum a posteriori (MAP) estimation seeks the most probable value $w$ under the posterior:
  
  $$ w_{MAP} = \underset{w}{\operatorname{argmax}} \space ln \space p(w|y,X) $$
  
@@ -367,15 +348,9 @@ $w \in R^d$
  
  $$ = \underset{w}{\operatorname{argmax}} \space ln \space p(y|w,X) + ln \space p(w) - ln \space p(y|X) $$
  
- - The normalizing constant term 
- $ln \space p(y|X)$
- doesn't involve 
- $w$
- . Therefore, we can maximize the first two terms alone.
+ - The normalizing constant term $ln \space p(y|X)$ doesn't involve $w$. Therefore, we can maximize the first two terms alone.
 
-- In many models we don't know
-$ln \space p(y|X)$
-, so this fact is useful. 
+- In many models we don't know $ln \space p(y|X)$, so this fact is useful. 
 
 - Hence,
 
@@ -383,9 +358,7 @@ $$ w_{MAP} = \underset{w}{\operatorname{argmax}} \space ln \space p(y|w,X) + ln 
 
 $$ = \underset{w}{\operatorname{argmax}} \space - \frac{1}{2 \sigma^2}(y - Xw)^T(y-Xw) - \frac{\lambda}{2}w^Tw + const $$
 
-- this solution for 
-$w_{MAP}$
-is the same as for ridge regression (we do not cover ridge regression(RR) here).
+- this solution for $w_{MAP}$ is the same as for ridge regression (we do not cover ridge regression(RR) here).
 
 $$ w_{MAP} = (\lambda \sigma^2I + X^TX)^{-1}X^Ty \space \Leftrightarrow \space w_{RR}$$
 
@@ -395,7 +368,8 @@ $$ w_{MAP} = (\lambda \sigma^2I + X^TX)^{-1}X^Ty \space \Leftrightarrow \space w
 - The find a specific value(point) of the vector $w$ that maximizes an objective function (MAP or ML)
   - ML: Only consider data model
   - MAP: Takes into account model prior
-- Bayesian inference goes one step further by characterizing uncertainty about the values in w using Bayes rule.
+  - 
+- Bayesian inference goes one step further by characterizing uncertainty about the values in w using Bayes rule. (Bayesian inference는 파라메터의 uncertainty(=variance)를 계산할 수 있다. parameter의 uncertainty를 구하는 것과, prediction의 uncertainty를 구하는 것에 대해 추가공부 필요!)
 
 - In posterior calculation, we get an updated distribution on $w$ through the transition
 
@@ -403,7 +377,7 @@ $$ prior \rightarrow likelihood \rightarrow posterior $$
 
 - Bayesian learning is naturally thought of a sequential process. That is, the posterior after seeing some data becomes the prior for the next data.
 
-- Maximum likelihood는 데이터가 주어졌을 때, 이를 잘 적합하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution(사전정보)이 있다고 가정하고, 새로운데이터가 입력될때마다 likelihood와 prior를 반복적으로 업데이트하여 posteriori를 계산하는 방법이다.
+- Maximum likelihood는 데이터가 주어졌을 때, OLS라는 목적함수를 최소화하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution을 가정하고, 데이터가 주어졌을 때, prior distribution을 만족하는 w를 찾는 방법이다. 이 때, $p(w|y,X)$를 바로 구하기 어렵기 때문에, likelihood와 prior의 곱을 최소로 하는 w를 찾는다. 
  
 ## 10. Random process
 
