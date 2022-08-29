@@ -3,10 +3,19 @@ toc: true
 layout: post
 description: Understanding Gaussian Process without any knowledge
 categories: [gaussian process]
-title: Understanding Gaussian Process without any knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)
+title: Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)
 ---
 
+## 0. Basic concepts
 
+ > Sample space: the sample space of an experiment or random trial is the **set of all possible outcomes or results of that experiment**. An event is a subset of the sample space. 동전을 던졌을 때 나올 수 있는 결과는 앞면(H) 또는 뒷면(T)임, 발생할 수 있는 모든 경우의 수를 의미함.
+ 
+ > Random Variable: A Random Variable is a mathematical formalization of a quantity or object which depends on random events. It is a mapping or a function from possible outcomes in a sample space to a measurable space(아마도 확률을 의미하는 것이 아닐지...), often the real numbers.
+
+ > Probability: The probability of an event  A  is the sum of the probabilities of the individual outcomes of which it is composed. It is denoted  P(A).
+ 
+ > Random Process: A random process is a collection of random variables usually indexed by time.
+ 
 ## 1. Conditional probability
 > In probability theory, **[conditional probability](https://en.wikipedia.org/wiki/Conditional_probability)** is a measure of the probability of an event occurring, given that another event (by assumption, presumption, assertion or evidence) has already occurred.
 
@@ -225,7 +234,11 @@ $$ - \sum_{i=1}^n 2 y_i x_i + (\sum_{i=1}^n 2 x_i x_i^T)w = 0 \space \Rightarrow
 
 $$ w_{LS} = (X^T X)^{-1} X^T y $$
 
-## 9. Gaussian process
+## 9. MAP
+
+## 10. Bayesian Regression Concepts
+
+## 11. Gaussian process
 
 - A random process X(t) is a Gaussian process if for all k ∈ N for all t1, ... ,tk , a random vector formed by X(1), ... , X(tk) is jointly Gaussian.
 - The joint density is completely specified by
@@ -243,13 +256,13 @@ and t ∈ R
 
 - **Gaussian process** and **Gaussian process regression** are different.
 
-## 10. Gaussian process regression
+## 12. Gaussian process regression
 
 - A nonparametric Bayesian regression method using the properties of Gaussian processes.
 - Two views to interpret Gaussian process regression
- - Weight-space view
- - Function-space view
+  - Weight-space view
+  - Function-space view
 
-# 10.1 Weight-space view
+# 12.1 Weight-space view
 
 - 
