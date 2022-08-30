@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Understanding Gaussian Process Step-by-Step
-categories: [gaussian process]
+categories: [Gaussian process, Gaussian process regression]
 title: Understanding Gaussian Process Step-by-Step (차근차근 Gaussian Process 이해해보기)
 ---
 
