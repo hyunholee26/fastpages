@@ -7,15 +7,18 @@ permalink: /about/
 ## Research Interests
 
 Main research interests are below:
- - Deep learning for geospatial data such as remote sensed images and digital elevation model
- - Spatiotemporal data mining and applications for water management
- - Geographic information science
+ - Deep learning for geospatial data such as remote sensed images and DEM (digital elevation model)
+ - Spatiotemporal data mining and applications for water resources management
+ - Spatial data science and geographic information science
 
 My research focuses on **incorporating domain knowledge within data-driven models or learning process as an inductive bias, thereby achieving efficient learning from few samples or sparse observations and making the model easier to understand for scientists and non-machine-learning experts.** Also, I would like to research the applications of these techniques in water resources management such as the prediction of water level and dam inflow. For more information about my research experience, please refer to my **[Curriculum Vitae](https://hyunholee26.github.io/assets/files/cv_lhh_Feb_2022.pdf)** (PDF).
 
 
 ## Education
-
+ - **Arizona State University**, *Tempe, United State*
+   + Ph.D in Geographic Information Science
+   + Aug. 2022 - Present
+   <br/><br/>
  - **KAIST (Korea Advanced Institute of Science and Technology)**, *Daejeon, Republic of Korea*
    + M.S in Computer Science
    + Mar. 2008 – Feb. 2010 
