@@ -27,7 +27,9 @@ fraction of those points in column i that fall in cell i,j and hence is given by
 
 $$ p(Y = y_j |X = x_i) = \frac{n_{ij}}{c_i} $$
 
-- **product rule of probability** $$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j|X=x_i)p(X = x_i)$$
+- **product rule of probability** 
+
+$$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j|X=x_i)p(X = x_i)$$
 
 - More compact notation,
   - sum rule $$p(X) = \sum_Y p(X,Y)$$
