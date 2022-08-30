@@ -32,7 +32,7 @@ $$ p(Y = y_j |X = x_i) = \frac{n_{ij}}{c_i} $$
 - More compact notation,
   - sum rule $$p(X) = \sum_Y p(X,Y)$$
   - product rule $$p(X,Y) = p(Y|X)p(X)$$
-  - $P(X,Y) = P(Y,X)$ so, we can derive **Bayes' theorem** $$P(X,Y) = P(Y|X)P(X) = P(X|Y)P(Y)$$ $$\therefore p(Y|X) = \frac{P(X|Y)P(Y)}{P(X)}$$
+  - $p(X,Y) = p(Y,X)$ so, we can derive **Bayes' theorem** $$p(X,Y) = p(Y|X)p(X) = p(X|Y)p(Y)$$ $$\therefore p(Y|X) = \frac{p(X|Y)p(Y)}{p(X)}$$
 
 - Using the sum rule, the denominator in Bayes’ theorem can be expressed in terms of the quantities appearing in the numerator $$p(X) = \sum_Y p(X,Y) = \sum_Y p(X|Y)p(Y)$$ 
   - We can view the denominator in Bayes’ theorem as being the normalization constant
