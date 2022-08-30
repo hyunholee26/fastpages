@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: Understanding Gaussian Process without any knowledge
+description: Understanding Gaussian Process Step-by-Step
 categories: [gaussian process]
-title: Understanding Gaussian Process without any prior knowledge (아무 지식이 없는 상태에서 Gaussian Process 까지 이해해보기)
+title: Understanding Gaussian Process Step-by-Step (차근차근 Gaussian Process 이해해보기)
 ---
 
 ## 0. Basic concepts
