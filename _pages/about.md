@@ -11,7 +11,9 @@ Main research interests are below:
  - Spatiotemporal data mining and applications for water resources management
  - Spatial data science and geographic information science
 
-My research focuses on **incorporating domain knowledge within data-driven models or learning process as an inductive bias, thereby achieving efficient learning from few samples or sparse observations and making the model easier to understand for scientists and non-machine-learning experts.** Also, I would like to research the applications of these techniques in water resources management such as the prediction of water level and dam inflow. For more information about my research experience, please refer to my **[Curriculum Vitae](https://github.com/hyunholee26/fastpages/blob/master/assets/cv_lhh_Aug_2022.pdf)** (PDF).
+My research focuses on **incorporating domain knowledge within data-driven models or learning process as an inductive bias, thereby achieving efficient learning from few samples or sparse observations and making the model easier to understand for scientists and non-machine-learning experts.** Also, I would like to research the applications of these techniques in water resources management such as the prediction of water level and dam inflow. For more information about my research experience, please refer to my **[Curriculum Vitae](https://hyunholee26.github.io//fastpages/assets/cv_lhh_Aug_2022.pdf)** (PDF).
+
+
 
 ## Education
  - **Arizona State University**, *Tempe, United State*
