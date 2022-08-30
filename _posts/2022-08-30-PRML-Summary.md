@@ -38,3 +38,4 @@ $$ p(Y = y_j |X = x_i) = \frac{n_{ij}}{c_i} $$
   - We can view the denominator in Bayes’ theorem as being the normalization constant
 required to ensure that the sum of the conditional probability on the left-hand side of over all values of $Y$ equals one. 
 
+- if $x$ and $y$ are two real variables, then the sum and product rules take the form $$p(x) = \int p(x, y) dy$$ $$p(x, y) = p(y|x)p(x)$$
