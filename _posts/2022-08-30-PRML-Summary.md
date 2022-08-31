@@ -70,7 +70,10 @@ The average value of some function $f(x)$ under a probability distribution $p(x)
 
 $$E[f] = \sum_x p(x) f(x) \space \space or \space \space E[f] = \int p(x) f(x) dx $$
 
-- If we are given a finite number $N$ of points drawn from the probability distribution or probability density, then the expectation can be approximated as a finite sum over these points $$E[f] \sim \frac{1}{N} \sum_{n=1}^{N}f(x_n) $$
+- If we are given a finite number $N$ of points drawn from the probability distribution or probability density, then the expectation can be approximated as a finite sum over these points 
+
+$$E[f] \sim \frac{1}{N} \sum_{n=1}^{N}f(x_n) $$
+
 - $E_x[f(x, y)]$ will be a function of y, **conditional expectation** with respect to a conditional distribution, 
 
 $$E_x[f \mid y] = \sum_x p(x \mid y)f(x)$$
