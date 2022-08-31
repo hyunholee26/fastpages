@@ -47,11 +47,11 @@ $$p(X,Y) = p(Y \mid X)p(X)$$
 
 $$p(X,Y) = p(Y \mid X)p(X) = p(X \mid Y)p(Y)$$ 
 
-$$\therefore p(Y|X) = \frac{p(X|Y)p(Y)}{p(X)}$$
+$$\therefore p(Y \mid X) = \frac{p(X \mid Y)p(Y)}{p(X)}$$
 
 - Using the sum rule, the denominator in Bayes’ theorem can be expressed in terms of the quantities appearing in the numerator 
 
-$$p(X) = \sum_Y p(X,Y) = \sum_Y p(X|Y)p(Y)$$ 
+$$p(X) = \sum_Y p(X,Y) = \sum_Y p(X \mid Y)p(Y)$$ 
 
 - We can view the denominator in Bayes’ theorem as being the normalization constant
 required to ensure that the sum of the conditional probability on the left-hand side of over all values of $Y$ equals one. 
@@ -62,7 +62,7 @@ If $x$ and $y$ are two real variables, then the sum and product rules take the f
 
 $$p(x) = \int p(x, y) dy$$ 
 
-$$p(x, y) = p(y|x)p(x)$$
+$$p(x, y) = p(y \mid x)p(x)$$
 
 ### 1.2.2 Expectations and covariances
 
@@ -71,7 +71,9 @@ The average value of some function $f(x)$ under a probability distribution $p(x)
 $$E[f] = \sum_x p(x) f(x) \space \space or \space \space E[f] = \int p(x) f(x) dx $$
 
 - If we are given a finite number $N$ of points drawn from the probability distribution or probability density, then the expectation can be approximated as a finite sum over these points $$E[f] \sim \frac{1}{N} \sum_{n=1}^{N}f(x_n) $$
-- $E_x[f(x, y)]$ will be a function of y, **conditional expectation** with respect to a conditional distribution, $$E_x[f \| y] = \sum_x p(x \| y)f(x)$$
+- $E_x[f(x, y)]$ will be a function of y, **conditional expectation** with respect to a conditional distribution, 
+
+$$E_x[f \mid y] = \sum_x p(x \mid y)f(x)$$
 
 The variance of $f(x)$ is defined by 
 
