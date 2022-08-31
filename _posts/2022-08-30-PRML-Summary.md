@@ -161,3 +161,30 @@ we can therefore write the probability of the data set, given $\mu$ and $\sigma^
 $$p(\mathbf{x} \mid \mu, \sigma^2) = \prod_{n=1}^N N(x_n \mid \mu, \sigma^2)$$
 
 - When viewed as a function of $\mu$ and $\sigma^2$, this is the likelihood function for the Gaussian
+
+- Taking the log not only simplifies the subsequent mathematical analysis, but it also helps numerically because the product of a large number of small probabilities can easily underflow the numerical precision of the computer, and this is resolved by computing instead the sum of the log probabilities.
+
+$$ln \space p(\mathbf{x} \mid \mu, \sigma^2) = -\frac{1}{2\sigma^2} \sum_{n=1}^N (x_n - \mu)^2 - \frac{N}{2}ln \sigma^2 - \frac{N}{2}ln(2 \pi) $$
+
+- Maximizing with respect to $\mu$, we obtain the maximum likelihood solution given by
+
+$$ \mu_{ML} = \frac{1}{N} \sum_{n=1}^N x_n$$
+
+- which is the sample mean, i.e., the mean of the observed values $x_n$. Similarly, maximizing with respect to $\sigma^2$, we obtain the maximum likelihood solution for the variance in the form
+
+$$\sigma_{ML}^2 = \frac{1}{N} \sum_{n=1}^N(x_n - \mu_{ML})^2$$
+
+- which is the sample variance measured with respect to the sample mean $\mu_{ML}$.
+
+- Consider the expectations of these quantities with respect to the data set values, which themselves come from a Gaussian distribution with parameters $\mu$ and $\sigma^2$. It is straightforward to show that
+
+$$E[\mu_{ML}] = \mu$$
+
+$$E[\sigma_{ML}^2] = (\frac{N-1}{N}) \sigma^2$$
+
+-so that on average the maximum likelihood estimate will obtain the correct mean but will underestimate the true variance by a factor $(N − 1)/N$, following estimate for the variance parameter is unbiased
+
+$$\tilde{\sigma}^2 = \frac{N}{N-1} \sigma_{ML}^2 = \frac{1}{N-1} \sum_{n=1}^N(x_n - \mu_{ML})^2$$
+
+
+
