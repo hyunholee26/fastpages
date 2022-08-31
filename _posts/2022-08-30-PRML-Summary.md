@@ -98,3 +98,66 @@ $$cov[x,y] = E_{x,y}[(x-E[x])(y-E[y])] = E_{x,y}[xy] - E[x]E[y]$$
 - In the case of two vectors of random variables x and y, the covariance is a matrix 
 
 $$cov[\textbf{x},\textbf{y}] = E_{\textbf{x},\textbf{y}} [(\textbf{x} - E[\textbf{x}])(\textbf{y}^T -E[\textbf{y}^T])] = E_{\textbf{x},\textbf{y}}[\textbf{x}\textbf{y}^T] - E[\textbf{x}]E[\textbf{y}^T]$$
+
+### 1.2.3 Bayesian probabilities
+
+Bayes’ theorem, which takes the form
+
+$$p(\textbf{w} \mid D) = \frac{p(D \mid \textbf{w})p(\textbf{w})}{p(D)} $$
+
+- then **allows us to evaluate the uncertainty in w after we have observed D in the form
+of the posterior probability $p(\textbf{w} \mid D)$**
+
+- The quantity $p(D \mid \textbf{w})$ on the right-hand side of Bayes’ theorem is evaluated for the observed data set $D$ and can be viewed as a function of the parameter vector $\textbf{w}$, in which case it is called the **likelihood function**. **It expresses how probable the observed data set is for different settings of the parameter vector $\textbf{w}$**. Note that the likelihood is not a probability distribution over w, and its integral with respect to $\textbf{w}$ does not (necessarily) equal one.
+
+- Given this definition of likelihood, we can state Bayes’ theorem in words
+
+$$posterior \propto likelihood \times piror $$
+
+- where all of these quantities are viewed as functions of $\textbf{w}$. The denominator is the normalization constant, which ensures that the posterior distribution on the left-hand side is a valid probability density and integrates to one.
+
+$$p(D) = \int p(D \mid \textbf{w})p(\textbf{w})d \textbf{w} $$
+
+-  In a frequentist setting, $\textbf{w}$ is considered to be a fixed parameter, whose value is determined by some form of ‘estimator’, and error bars on this estimate are obtained by considering the distribution of possible data sets $D$
+
+- By contrast, from the Bayesian viewpoint there is only a single data set $D$ (namely
+the one that is actually observed), and the uncertainty in the parameters is expressed
+through a probability distribution over $\textbf{w}$. 
+
+### 1.2.4 The Gaussian distribution
+
+For the case of a single real-valued variable $x$, the Gaussian distribution is defined by
+
+$$N(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2 \pi} \sigma}exp(-\frac{1}{2}(\frac{x-\mu}{\sigma})^2) $$
+
+- which is governed by two parameters: $\mu$, called the **mean**, and $\sigma^2$, called the **variance**. The square root of the variance, given by $\sigma$, is called the standard deviation, and the reciprocal of the variance, written as $\beta = 1 / \sigma^2$, is called the **precision**.
+
+$$E[x] = \int_{-\infty}^{\infty} N(x \mid \mu, \sigma^2)x dx = \mu$$
+
+$$E[x^2] = \int_{-\infty}^{\infty} N(x \mid \mu, \sigma^2)x^2 dx = \mu^2 + \sigma^2$$
+
+- (proof) we make the change of variables $u = x - \mu$, and get
+
+$$E[x] =  \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma}exp(-\frac{1}{2}(\frac{u}{\sigma})^2)(\mu + u) du$$
+
+$$E[x] =  \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma}exp(-\frac{1}{2}(\frac{u}{\sigma})^2)\mu du + \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi} \sigma}exp(-\frac{1}{2}(\frac{u}{\sigma})^2)u du$$
+
+- We see that the first term of the right hand side of the equation is equal to $\mu$ because, it is the normal distribution’s normalization condition multiplied with a constant $\mu$. And we can see by inspection that the second term vanishes because the integrand is an odd function evaluated in $(-\infty,\infty)$, which is the multiplication of an even function ( $\exp({\frac{-u^2}{2\sigma^2}})$ ) and an odd function ( $u$ ). 
+
+$$E[x] = u + 0$$
+
+- Also, $E[x^2] = \sigma^2 + \mu^2$ can be proved using $var[x] = E[x^2] - E[x]^2$
+
+Gaussian distribution defined over a D-dimensional vector x of continuous variables, which is given by
+
+$$N(\mathbf{x} \mid \mathbf{\mu}, \mathbf{\Sigma}) = \frac{1}{\sqrt{(2 \pi)^D \lvert \mathbf{\Sigma} \rvert}} exp (-\frac{1}{2}(\mathbf{x} - \mathbf{\mu})^T \mathbf{\Sigma}^{-1} (\mathbf{x} - \mathbf{\mu}))$$
+
+- where the D-dimensional vector $\mathbf{\mu}$ is called the mean, the $D \times D$ matrix $\mathbf{\Sigma}$ is called the covariance, and $\lvert \mathbf{\Sigma} \rvert$ denotes the determinant of $\Sigma$
+
+ - Data points that are drawn independently from the same distribution are said to be **independent and identically distributed**, which is often abbreviated to i.i.d. We have
+seen that the joint probability of two independent events is given by the product of the marginal probabilities for each event separately. Because our data set $\mathbf{x}$ is i.i.d.,
+we can therefore write the probability of the data set, given $\mu$ and $\sigma^2$, in the form
+
+$$p(\mathbf{x} \mid \mu, \sigma^2) = \prod_{n=1}^N N(x_n \mid \mu, \sigma^2)$$
+
+- When viewed as a function of $\mu$ and $\sigma^2$, this is the likelihood function for the Gaussian
