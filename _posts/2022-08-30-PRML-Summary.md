@@ -24,13 +24,9 @@ $$ p(X = x_i) = \frac{c_i}{N} $$
 - If we consider only those instances for which $X = x_i$, then the fraction of
 such instances for which $Y = y_j$ is written $p(Y = y_j |X = x_i)$ and is called the
 **conditional probability** of $Y = y_j$ given $X = x_i$. It is obtained by finding the
-fraction of those points in column i that fall in cell i,j and hence is given by
+fraction of those points in column i that fall in cell i,j and hence is given by $$p(Y = y_j  \| X = x_i) = \frac{n_{ij}}{c_i} $$
 
-$$ p(Y = y_j |X = x_i) = \frac{n_{ij}}{c_i} $$
-
-- **product rule of probability** 
-
-$$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j|X=x_i)p(X = x_i)$$
+- **product rule of probability** $$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j \| X=x_i)p(X = x_i)$$
 
 - More compact notation,
   - sum rule 
@@ -73,10 +69,7 @@ or
 $$E[f] = \int p(x) f(x) dx $$
 
 - If we are given a finite number $N$ of points drawn from the probability distribution or probability density, then the expectation can be approximated as a finite sum over these points $$E[f] \sim \frac{1}{N} \sum_{n=1}^{N}f(x_n) $$
-- $E_x[f(x, y)]$ will be a function of y, **conditional expectation** with respect to a conditional
-distribution, 
-
-$$E_x[f|y] = \sum_x p(x|y)f(x)$$
+- $E_x[f(x, y)]$ will be a function of y, **conditional expectation** with respect to a conditional distribution, $$E_x[f \| y] = \sum_x p(x \| y)f(x)$$
 
 - The variance of $f(x)$ is defined by $$var[f] = E[(f(x) - E[f(x)])^2] = E[f(x)^2] - E[f(x)]^2$$
   - and provides a measure of how much variability there is in $f(x)$ around its mean
