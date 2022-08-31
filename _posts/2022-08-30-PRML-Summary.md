@@ -29,15 +29,15 @@ fraction of those points in column i that fall in cell i,j and hence is given by
 - **product rule of probability** $$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j \mid X=x_i)p(X = x_i)$$
 
 - More compact notation,
-  - sum rule 
+  + sum rule 
 
 $$p(X) = \sum_Y p(X,Y)$$
 
-  - product rule 
+  + product rule 
 
 $$p(X,Y) = p(Y \mid X)p(X)$$
 
-  - $p(X,Y) = p(Y,X)$ so, we can derive **Bayes' theorem** 
+  + $p(X,Y) = p(Y,X)$ so, we can derive **Bayes' theorem** 
 
 $$p(X,Y) = p(Y \mid X)p(X) = p(X \mid Y)p(Y)$$ 
 
