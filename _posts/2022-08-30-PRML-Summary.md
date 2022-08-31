@@ -22,11 +22,11 @@ $$ p(X = x_i) = \frac{c_i}{N} $$
 
 
 - If we consider only those instances for which $X = x_i$, then the fraction of
-such instances for which $Y = y_j$ is written $p(Y = y_j |X = x_i)$ and is called the
+such instances for which $Y = y_j$ is written $p(Y = y_j \mid X = x_i)$ and is called the
 **conditional probability** of $Y = y_j$ given $X = x_i$. It is obtained by finding the
-fraction of those points in column i that fall in cell i,j and hence is given by $$p(Y = y_j  \| X = x_i) = \frac{n_{ij}}{c_i} $$
+fraction of those points in column i that fall in cell i,j and hence is given by $$p(Y = y_j  \mid X = x_i) = \frac{n_{ij}}{c_i} $$
 
-- **product rule of probability** $$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j \| X=x_i)p(X = x_i)$$
+- **product rule of probability** $$p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{c_i} \cdot \frac{c_i}{N} = p(Y=y_j \mid X=x_i)p(X = x_i)$$
 
 - More compact notation,
   - sum rule 
@@ -35,11 +35,11 @@ $$p(X) = \sum_Y p(X,Y)$$
 
   - product rule 
 
-$$p(X,Y) = p(Y|X)p(X)$$
+$$p(X,Y) = p(Y \mid X)p(X)$$
 
   - $p(X,Y) = p(Y,X)$ so, we can derive **Bayes' theorem** 
 
-$$p(X,Y) = p(Y|X)p(X) = p(X|Y)p(Y)$$ 
+$$p(X,Y) = p(Y \mid X)p(X) = p(X \mid Y)p(Y)$$ 
 
 $$\therefore p(Y|X) = \frac{p(X|Y)p(Y)}{p(X)}$$
 
