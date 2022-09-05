@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://hyunholee26.github.io/fastpages/english/2022/03/12/useful-expressions-in-english.html</loc>
-<lastmod>2022-03-12T00:00:00-06:00</lastmod>
-</url>
-<url>
-<loc>https://hyunholee26.github.io/fastpages/machine%20learning/2022/08/30/PRML-Summary.html</loc>
-<lastmod>2022-08-30T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://hyunholee26.github.io/fastpages/about/</loc>
 </url>
 <url>
@@ -22,6 +14,6 @@
 </url>
 <url>
 <loc>https://hyunholee26.github.io/fastpages/assets/cv_lhh_Aug_2022.pdf</loc>
-<lastmod>2022-09-05T11:13:29-05:00</lastmod>
+<lastmod>2022-09-05T11:14:01-05:00</lastmod>
 </url>
 </urlset>
