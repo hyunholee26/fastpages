@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Gaussian Process",
+            "title": "Gaussian Process 이해하기",
             "content": "Spatiotemporal Analysis를 수강하면서, 가우시안 프로세스를 이해하기 위해 필요한 지식들을 정리한 글입니다. .",
-            "url": "https://hyunholee26.github.io/fastpages/2022/09/05/Gaussian-Process.html",
-            "relUrl": "/2022/09/05/Gaussian-Process.html",
+            "url": "https://hyunholee26.github.io/fastpages/gaussian%20process/2022/09/05/Gaussian-Process.html",
+            "relUrl": "/gaussian%20process/2022/09/05/Gaussian-Process.html",
             "date": " • Sep 5, 2022"
         }
         
