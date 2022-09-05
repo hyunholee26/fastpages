@@ -3,6 +3,7 @@ toc: true
 layout: post
 description: 
 categories: [Gaussian Process]
+comments: true
 title: Gaussian Process 이해하기
 ---
 
