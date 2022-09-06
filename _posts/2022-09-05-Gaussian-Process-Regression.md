@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: 
-categories: [PRML]
+categories: [Machine Learning]
 comments: true
 title: Gaussian Process Regression 이해하기 (작성중)
 ---
