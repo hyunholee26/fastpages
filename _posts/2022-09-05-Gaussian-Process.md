@@ -81,7 +81,7 @@ $$ \Pr(K = k) = f(k,n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
   
 - (Likelihood) 사건이 발생했을 때(n과 k가 관찰됨), 1회 시행시 발생확률 $\theta$ 에 따른 pmf를 계산한 값입니다. 이것은 $\theta$에 따른 사건의 발생가능도를 계산한 것으로 표현할 수 있습니다. 이 경우, pmf는 $\theta$를 매개변수로 가지는 함수식이 되며, $\sum_{\theta} f(k,n,\theta)$는 반드시 1은 아닙니다. 
 
-- 최종 정리를 해보면, pmf에 대해 $\theta$가 주어지고, n과 k가 변수인 경우를 확률이라고 하며, 이때는 모든 n과 k에 대한 f(n,k)의 합은 1이됩니다. pmf에 대해 n과 k가 주어지고, $\theta$ 가 변수인 경유를 가능도라고 하며, 이때 모든 \$theta$에 대한 f( $\theta$ )의 합은 꼭 1이 되지 않습니다. 확률가 가능도는 동일한 pmf에 대해 어떤 매개변수를 주어진것으로 보고, 어떤 매개변수를 pmf라는 함수의 변수로 볼 것인지에 따라 달라지는 개념이라고 최종적으로 이해했습니다.
+- 최종 정리를 해보면, pmf에 대해 $\theta$가 주어지고, n과 k가 변수인 경우를 확률이라고 하며, 이때는 모든 n과 k에 대한 f(n,k)의 합은 1이됩니다. pmf에 대해 n과 k가 주어지고, $\theta$ 가 변수인 경유를 가능도라고 하며, 이때 모든 $\theta$에 대한 f( $\theta$ )의 합은 꼭 1이 되지 않습니다. 확률과 가능도는 동일한 pmf에 대해 어떤 매개변수를 pmf라는 함수의 변수로 볼 것인지에 따라 달라지는 개념이라고 최종적으로 이해했습니다.
 
 ## 6. Maximum likelihood estimation(MLE)
 
@@ -137,30 +137,21 @@ $$ \hat \mu_{MLE} = \frac{1}{n}\sum_{i=1}^n x_i, \space \hat \sigma_{MLE} = \fra
 - MLE는 데이터를 관찰하고, 관찰된 데이터를 가장 잘 표현하는 매개변수( $\theta$ )를 추정하는 방식입니다. 하지만, 관찰된 데이터는 전체 모집단을 잘 표현할 수 있는 데이터여야 할 것입니다. 그렇지 않다면, MLE로 추정된 변수로 만들어진 모델은 overfitting될 가능성이 높습니다. MLE는 빈도주의자들의 방식이라고 합니다.
   - If $x_1, \dots x_n$ don’t “capture the space” well, $\theta_{MLE}$ can overfit the data. 
 
-## 6. Gaussian Distribution
+## 8. Gaussian Distribution
 
-- Bayesian 
+- 분포가 가지는 계산의 편리함으로 인해, Bayesian 방법론에서는 Gaussian distribution을 많이 다룹니다. 
 
-### 6-1. Univariate Gaussian Distribution
+### 8-1. Univariate Gaussian Distribution
 
 - In statistics, a **[normal distribution](https://en.wikipedia.org/wiki/Normal_distribution)** (also known as Gaussian, Gauss, or Laplace–Gauss distribution) is a type of continuous probability distribution for a real-valued random variable. The general form of its probability density function is
 
 $$ f(x) = \frac {1}{\sigma \sqrt{2\pi}} e ^ {-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$$
 
-   - random variable X is normally distributed with mean 
-$\mu$
-and standard deviation
-$\sigma$
-, one may write
-$\displaystyle X\sim {\mathcal {N}}(\mu ,\sigma ^{2})$
+   - random variable X is normally distributed with mean $\mu$ and standard deviation $\sigma$, one may write $\displaystyle X\sim {\mathcal {N}}(\mu ,\sigma ^{2})$
 
-$$ $$
+### 8-2. Multivariate Gaussian Distribution
 
-### 6-2. Multivariate Gaussian Distribution
-
-- The **[multivariate normal distribution](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)** of a k-dimensional random vector
-$X =(X_{1},\dots ,X_{k})^{T}$
-can be written in the following notation:
+- The **[multivariate normal distribution](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)** of a k-dimensional random vector $X =(X_{1},\dots ,X_{k})^{T}$ can be written in the following notation:
 
 $$ X \sim {\mathcal {N}}_{k} ({\boldsymbol {\mu }},{\boldsymbol {\Sigma }}),$$
 
@@ -173,11 +164,7 @@ $${\boldsymbol {\mu }=\operatorname {E} [\mathbf {X} ]=(\operatorname {E} [X_{1}
 $$ \Sigma_{i,j}=\operatorname {E} [(X_{i}-\mu _{i})(X_{j}-\mu _{j})]=\operatorname {Cov} [X_{i},X_{j}], $$
 
 - such that
-$1 \leq i \leq k$
-and 
-$1 \leq j \leq k$
-
-$$ $$
+$1 \leq i \leq k$ and $1 \leq j \leq k$
 
 - The general form of its probability density function is
 
@@ -188,11 +175,9 @@ $$ {\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\fr
 
 $$ \sqrt{({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})} $$
 
-- 만약,
-$\Sigma = \sigma^2 I$
-이라면, 즉, 각 변수간 공분산이 모두 0인 경우, 마할라노비스 거리는 유클리디안 거리와 같아집니다.
+- 만약, $\Sigma = \sigma^2 I$ 이라면, 즉, 각 변수간 공분산이 모두 0인 경우, 마할라노비스 거리는 유클리디안 거리와 같아집니다.
 
-## 7. Covariance의 의미
+## 9. Covariance의 의미
 
 - Variance(분산) : 데이터가 펼쳐진 정도, 분산이 작으면, 데이터가 좁은영역에 모여있고, 분산이 크면 데이터가 넓은 영역에 퍼지는 형태를 보임
 
@@ -206,57 +191,28 @@ $$ \operatorname {Cov} (\mathbf {X} ,\mathbf {Y} )=\operatorname {E} \left[(\mat
 
 $$ Cov(X, Y) = \frac{(x_1 - \mu_x)(y_1 - \mu_y) + (x_2 - \mu_x)(y_2 - \mu_y) + \dots + (x_n - \mu_x)(y_n - \mu_y)}{n} $$
 
-- 이고, 
-$(x_i - \mu_x)(y_i - \mu_y)$
-가 양수인 경우는 각각 평균보다 크거나, 각각 평균보다 작은 경우이며, 음수인 경우 그 반대이다. 또한 평균으로부터 값이 멀어질 수록 그 값이 커지게 된다. 즉, 각 변수의 평균을 중심으로 분산의 방향을 확인할 수 있다. 데이터를 축에 plotting했을 때, Cov(X,Y)가 양수이면, 1,3분면에 분포하며, 음수이면 주로 2,4분면에 분포할 것으로 생각할 수 있다. 다만, 공분산은 각 변수의 단위에 따라 값의 크기가 달라져서 절대적인 값의 크기로 비교하는 것은 타당하지 않다.
+- 이고, $(x_i - \mu_x)(y_i - \mu_y)$ 가 양수인 경우는 각각 평균보다 크거나, 각각 평균보다 작은 경우이며, 음수인 경우 그 반대이다. 또한 평균으로부터 값이 멀어질 수록 그 값이 커지게 된다. 즉, 각 변수의 평균을 중심으로 분산의 방향을 확인할 수 있다. 데이터를 축에 plotting했을 때, Cov(X,Y)가 양수이면, 1,3분면에 분포하며, 음수이면 주로 2,4분면에 분포할 것으로 생각할 수 있다. 다만, 공분산은 각 변수의 단위에 따라 값의 크기가 달라져서 절대적인 값의 크기로 비교하는 것은 타당하지 않다.
 
-$$ $$
 - 그래서, 공분산을 각각의 표준편차로 나누어 그 값을 [-1, 1]로 변환하여 계산한 것을 correlation(상관계수)라고 한다.
 
 $$ {\displaystyle \rho _{X,Y}=\operatorname {corr} (X,Y)={\operatorname {Cov} (X,Y) \over \sigma _{X}\sigma _{Y}}={\operatorname {E} [(X-\mu _{X})(Y-\mu _{Y})] \over \sigma _{X}\sigma _{Y}},\quad {\text{if}}\ \sigma _{X}\sigma _{Y}>0.} $$
 
-## 8. Linear Regression
+## 10. Linear Regression
 
-### 8.1 Problem definition
+### 10.1 Problem definition
 
-- Data: Measured pairs 
-$(x,y)$
-, where 
-$x \in R^{d+1}$
-(input) and 
-$y \in R$
-(output)
+- Data: Measured pairs $(x,y)$, where $x \in R^{d+1}$ (input) and $y \in R$ (output)
 
-- Goal: Find a function
-$f: R^{d+1} \rightarrow R$
-such that 
-$y \sim f(x;w)$
-for the data pair 
-$(x,y)$
-. 
-$f(x;w)$ 
-is the **regression function** and the vector 
-$w$
-are its paramenters.
+- Goal: Find a function $f: R^{d+1} \rightarrow R$ such that $y \sim f(x;w)$ for the data pair $(x,y)$. $f(x;w)$ is the **regression function** and the vector $w$ are its paramenters.
 
-- Definition of linear regression: A regression method is called linear if the prediction 
-$f$
-is a linear function of the unknown parameters 
-$w$
-.
+- Definition of linear regression: A regression method is called linear if the prediction $f$ is a linear function of the unknown parameters $w$.
 
-### 8.2 Least squares solution
-- Least squares finds the w that minimizes the sum of squared errors. The least squares objective in the most basic form where 
-$f(x;w) = x^Tw$
-is
+### 10.2 Least squares solution
+- Least squares finds the w that minimizes the sum of squared errors. The least squares objective in the most basic form where $f(x;w) = x^Tw$ is
 
 $$ L = \sum_{i=1}^n (y_i - x_i^T w)^2 = \lVert y-Xw \rVert ^2 = (y-Xw)^T(y-Xw)$$
 
-- We defined 
-$y = [y_1, \dots, y_n]^T \space$
-and
-$X = [x_1, \dots, x_n]^T
-.
+- We defined $y = [y_1, \dots, y_n]^T \space$ and $X = [x_1, \dots, x_n]^T.
 
 $$ w_{LS} = \underset{w}{\operatorname{argmin}} \sum_{i=1}^n (y_i - (w_0 + \sum_{j=1}^d x_{ij}w_j))^2 $$
 
@@ -272,24 +228,14 @@ $$ - \sum_{i=1}^n 2 y_i x_i + (\sum_{i=1}^n 2 x_i x_i^T)w = 0 \space \Rightarrow
 
 $$ w_{LS} = (X^T X)^{-1} X^T y $$
 
-- In other words, 
-$w_{LS}$
-is the vector that minimizes
-$L$
-.
+- In other words, $w_{LS}$ is the vector that minimizes $L$.
 
-### 8.3 Maximum likelihood for Gaussian linear regression
-- Assume a diagonal covariance matrix 
-$\Sigma = \sigma^2I$
-. The density is
+### 10.3 Maximum likelihood for Gaussian linear regression
+- Assume a diagonal covariance matrix $\Sigma = \sigma^2I$. The density is
 
 $$ p(y \mid \mu, \sigma^2) = \frac{1}{(2 \pi \sigma^2)^{\frac{n}{2}}} exp(-\frac{1}{2 \sigma^2}(y-\mu)^T(y-\mu)) $$
 
-- Plug
-$\mu = Xw$
-into the multivariate Gaussian distribution and solve for 
-$w$
-using maximum likelihood
+- Plug $\mu = Xw$ into the multivariate Gaussian distribution and solve for $w$ using maximum likelihood
 
 $$ w_{ML} = \underset{w}{\operatorname{argmax}} ln \space p(y \mid \mu = Xw, \sigma^2)$$
 
@@ -299,8 +245,7 @@ $$ = \underset{w}{\operatorname{argmax}} -\frac{1}{2 \sigma^2} \lVert y - Xw \rV
 
 $$LS: \space \underset{w}{\operatorname{argmin}} \lVert y - Xw \rVert^2  \Leftrightarrow ML: \space \underset{w}{\operatorname{argmax}} -\frac{1}{2 \sigma^2} \lVert y - Xw \rVert ^ 2 $$
 
-- therefore, in a sense we are making a *independent Gaussian noise assumption* about the error, 
-$\epsilon_i = y_i - x_i^Tw$
+- therefore, in a sense we are making a *independent Gaussian noise assumption* about the error, $\epsilon_i = y_i - x_i^Tw$
 
 - Other ways of saying this: \
   1)
@@ -310,9 +255,9 @@ $y_i \overset{ind}{\sim} N(x_i^Tw, \sigma^2), \space for \space i = 1, \dots, n.
   3)
 $y \sim N(Xw, \sigma^2I)$
 
-## 9. Bayesian linear regression
+## 11. Bayesian linear regression
 
-### 9.1 Model
+### 11.1 Model
 
 - Have vector $y \in R^n$ and covariates matrix $X \in R^{n \times d}$. The *i*th row of $y$ and $X$ correspond to the *i*th observation $(y_i, x_i)$
 
@@ -330,7 +275,7 @@ $$ Prior: \space w \sim N(0, \lambda^{-1}I) $$
 
 - This is called Bayesian linear regression because we have defined a prior on the unknown parameter and will try to learn its posterior.
 
-### 9.2 MAP(Maximum A Posteriori) solution
+### 11.2 MAP(Maximum A Posteriori) solution
 
  - Let us assume that the prior for $w$ is Gaussian, $w \sim N(0, \lambda^{-1}I)$. Then
  
@@ -360,7 +305,7 @@ $$ = \underset{w}{\operatorname{argmax}} \space - \frac{1}{2 \sigma^2}(y - Xw)^T
 
 $$ w_{MAP} = (\lambda \sigma^2I + X^TX)^{-1}X^Ty \space \Leftrightarrow \space w_{RR}$$
 
-### 9.3 Point estimates
+### 11.3 Point estimates
 
 - $w_{MAP}$ and $w_{ML}$ are referred to as point estimates of the model parameters.
 - The find a specific value(point) of the vector $w$ that maximizes an objective function (MAP or ML)
@@ -377,9 +322,9 @@ $$ prior \rightarrow likelihood \rightarrow posterior $$
 
 - Maximum likelihood는 데이터가 주어졌을 때, OLS라는 목적함수를 최소화하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution을 가정하고, 데이터가 주어졌을 때, prior distribution을 만족하는 w를 찾는 방법이다. 이 때, $p(w \mid y,X)$를 바로 구하기 어렵기 때문에, likelihood와 prior의 곱을 최소로 하는 w를 찾는다. 
  
-## 10. Random process
+## 12. Random process
 
-### 10.1 Definition
+### 12.1 Definition
 
 - A random process is a collection of random variables usually indexed by time.
   - A continuous-time random process is a random process ${X(t),t \in J}$, where $J$ is an interval on the real line such as $[−1,1], [0,\infty), (-\infty, \infty)$, etc.
@@ -387,7 +332,9 @@ $$ prior \rightarrow likelihood \rightarrow posterior $$
 
 - **A random process is a random function of time.**
 
-## 11. Gaussian process
+## 13. Kernel
+
+## 14. Gaussian process
 
 - A **random process** X(t) is a Gaussian process if for all k ∈ N for all t1, ... ,tk , a random vector formed by X(1), ... , X(tk) is jointly Gaussian.
 - The joint density is completely specified by
@@ -405,15 +352,15 @@ and t ∈ R
 
 - **Gaussian process** and **Gaussian process regression** are different.
 
-## 12. Gaussian process regression
+## 15. Gaussian process regression
 
 - A nonparametric **Bayesian regression** method using the properties of **Gaussian processes**.
 - Two views to interpret Gaussian process regression
   - Weight-space view
   - Function-space view
 
-# 12.1 Weight-space view
+### 15.1 Weight-space view
+### 15.2 Function-space view
 
-- 
 
 
