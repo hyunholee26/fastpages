@@ -77,13 +77,13 @@ $$P(양성) = P(양성 \mid 정상) \cdot P(정상) + P(양성 \mid 폐암) \cdo
 
 $$ \Pr(K = k) = f(k,n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
 
-- (Probability) 우리가 믿고 있는 1회 시행시 발생확률 $\theta$ 가 주어지고, 사건이 발생했을 때(n과 k가 관찰됨), pmf를 계산한 값입니다. 이 경우, pmf는 n가 k를 매개변수로 가지는 함수식이 되며, $\sum_k^{n} f(k;n,\theta) = 1$입니다. 다시 표현하면, $\theta$가 주어지고, data가 관찰되었을 때, data가 발생할 확률을 구하는 것이며, 발생가능한 모든 data의 확률의 합은 1이 됩니다.
+- (Probability) 우리가 믿고 있는 1회 시행시 발생확률 $\theta$ 가 주어지고, 사건이 발생했을 때(n과 k가 관찰됨), pmf를 계산한 값입니다. 이 경우, pmf는 n가 k를 매개변수로 가지는 함수식이 되며, $\sum_k^{n} f(k,n,\theta) = 1$입니다. 다시 표현하면, $\theta$가 주어지고, data가 관찰되었을 때, data가 발생할 확률을 구하는 것이며, 발생가능한 모든 data의 확률의 합은 1이 됩니다.
   
-- (Likelihood) 사건이 발생했을 때(n과 k가 관찰됨), 1회 시행시 발생확률 $\theta$ 에 따른 pmf를 계산한 값입니다. 이것은 $\theta$에 따른 사건의 발생가능도를 계산한 것으로 표현할 수 있습니다. 이 경우, pmf는 \theta를 매개변수로 가지는 함수식이 되며, $\sum_{\theta} f(k;n,\theta)$는 반드시 1은 아닙니다. 
+- (Likelihood) 사건이 발생했을 때(n과 k가 관찰됨), 1회 시행시 발생확률 $\theta$ 에 따른 pmf를 계산한 값입니다. 이것은 $\theta$에 따른 사건의 발생가능도를 계산한 것으로 표현할 수 있습니다. 이 경우, pmf는 $\theta$를 매개변수로 가지는 함수식이 되며, $\sum_{\theta} f(k,n,\theta)$는 반드시 1은 아닙니다. 
 
 - 최종 정리를 해보면, pmf에 대해 $\theta$가 주어지고, n과 k가 변수인 경우를 확률이라고 하며, 이때는 모든 n과 k에 대한 f(n,k)의 합은 1이됩니다. pmf에 대해 n과 k가 주어지고, $\theta$ 가 변수인 경유를 가능도라고 하며, 이때 모든 \$theta$에 대한 f( $\theta$ )의 합은 꼭 1이 되지 않습니다. 확률가 가능도는 동일한 pmf에 대해 어떤 매개변수를 주어진것으로 보고, 어떤 매개변수를 pmf라는 함수의 변수로 볼 것인지에 따라 달라지는 개념이라고 최종적으로 이해했습니다.
 
-## 5. Maximum likelihood estimation(MLE)
+## 6. Maximum likelihood estimation(MLE)
 
 > In statistics, **[maximum likelihood estimation (MLE)](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)** is a method of estimating the parameters of an assumed probability distribution, given some observed data. This is achieved by maximizing a likelihood function so that, under the assumed statistical model, the observed data is most probable. The point in the parameter space that maximizes the likelihood function is called the maximum likelihood estimate. -- From wikipedia
 
@@ -115,7 +115,7 @@ $$ ln(\prod_i f_i) = \sum_i ln(f_i) $$
 
 - MLE는 빈도주의자들의 
 
-## 5. MLE 예제
+## 7. MLE 예제
 
 - 공장에서 10개의 제품을 검사했을 때, 정상이 8개, 불량이 2개인 경우가 관측되었습니다. 이 경우, 우리는 binomial distribution을 가정할 수 있습니다. binomial distribution의 pmf는 다음과 같이 정의됩니다.
 
@@ -136,14 +136,12 @@ $$ \theta = \displaystyle \frac{k}{n} $$
 
 $$ \hat \mu_{MLE} = \frac{1}{n}\sum_{i=1}^n x_i, \space \hat \sigma_{MLE} = \frac{1}{n}\sum_{i=1}^n (x_i - \hat \mu_{MLE})(x_i - \hat \mu_{MLE})^T$$
 
-- If 
-$x_1, \dots x_n$
-don’t “capture the space” well, 
-$\theta_{MLE}$
-can overfit the data.
-- 관측데이터에 overfitting되지 않는 파라메터(모수) 추정 방법에 대한 문제를 제기하는 것 같습니다. 아마도 뒤에서 Bayesian 방법론을 적용할 듯합니다.
+- MLE는 데이터를 관찰하고, 관찰된 데이터를 가장 잘 표현하는 매개변수( $\theta$ )를 추정하는 방식입니다. 하지만, 관찰된 데이터는 전체 모집단을 잘 표현할 수 있는 데이터여야 할 것입니다. 그렇지 않다면, MLE로 추정된 변수로 만들어진 모델은 overfitting될 가능성이 높습니다. MLE는 빈도주의자들의 방식이라고 합니다.
+  - If $x_1, \dots x_n$ don’t “capture the space” well, $\theta_{MLE}$ can overfit the data. 
 
 ## 6. Gaussian Distribution
+
+- Bayesian 
 
 ### 6-1. Univariate Gaussian Distribution
 
