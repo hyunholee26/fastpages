@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Gaussian Process Regression 이해하기 (작성중)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다." />
-<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다." />
+<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다." />
+<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다." />
 <link rel="canonical" href="https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html" />
 <meta property="og:url" content="https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html" />
 <meta property="og:site_name" content="Hyunho Lee" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Gaussian Process Regression 이해하기 (작성중)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다.","headline":"Gaussian Process Regression 이해하기 (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"},"url":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다.","headline":"Gaussian Process Regression 이해하기 (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"},"url":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hyunholee26.github.io/fastpages/feed.xml" title="Hyunho Lee" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -171,7 +171,7 @@ window.onload = wrap_img;
 </li>
 </ul><h2 id="0-들어가며">
 <a class="anchor" href="#0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>0. 들어가며</h2>
-<p>Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다.</p>
+<p>Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다.</p>
 <ul>
   <li>참고자료 : <a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">Pattern Recognition and Machine Learning</a>
 </li>
