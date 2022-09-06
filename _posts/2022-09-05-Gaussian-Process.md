@@ -8,9 +8,9 @@ title: Gaussian Process 이해하기
 ---
 
 ## 0. 들어가며
-Spatiotemporal Analysis를 수강하면서, 가우시안 프로세스를 이해하기 위해 필요한 지식들을 정리한 글입니다. 
+Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다. 
 - 참고자료 : [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
-- 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다.
+- 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다. 
 
 ## 1. Probability
 
@@ -70,18 +70,18 @@ $$P(양성) = P(양성 \mid 정상) \cdot P(정상) + P(양성 \mid 폐암) \cdo
 - 따라서 $P(폐암 \mid 양성) = 0.99 * 0.03 / 0.03939109 = 0.7539776127037866$
 이며, 약 75%임.
 
-## 5. Likelihood 
+## 5. Likelihood vs. Probability
 
-- Likelihood는 가능도로 번역됩니다. Probability와 Likelihood는 다소 헷갈리는 개념인데요, 저는 통계를 깊이있게 공부하는 사람은 아니기 때문에 이 지식을 사용하기 위한 목적으로만 있는 그대로 표현해보겠습니다. 
+- Likelihood는 가능도로 번역됩니다. 저에게 Probability와 Likelihood는 다소 헷갈리는 개념인데요, 저는 통계를 깊이있게 공부하는 사람은 아니기 때문에 이 지식을 사용하기 위한 목적으로만 있는 그대로 표현해보겠습니다. 
 - Binomial distribution의 pmf를 예로 들겠습니다. 이 pmf는 n은 전체시행횟수, k는 이벤트발생횟수, $\theta$가 1회 시행시 발생확률을 매개변수로 하는 함수식입니다.
 
-$$ \Pr(K = k) = f(k;n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
+$$ \Pr(K = k) = f(k,n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
 
-- (Probability) 우리가 믿고 있는 1회 시행시 발생확률 $\theta$ 가 주어지고, 사건이 발생했을 때(n과 k가 관찰됨), pmf를 계산한 값입니다. $\sum_k^{n} f(k;n,\theta) = 1$입니다. 다시 표현하면, $\theta$가 주어지고, data가 관찰되었을 때, data가 발생할 확률을 구하는 것이며, 발생가능한 모든 data의 확률의 합은 1이 됩니다.
+- (Probability) 우리가 믿고 있는 1회 시행시 발생확률 $\theta$ 가 주어지고, 사건이 발생했을 때(n과 k가 관찰됨), pmf를 계산한 값입니다. 이 경우, pmf는 n가 k를 매개변수로 가지는 함수식이 되며, $\sum_k^{n} f(k;n,\theta) = 1$입니다. 다시 표현하면, $\theta$가 주어지고, data가 관찰되었을 때, data가 발생할 확률을 구하는 것이며, 발생가능한 모든 data의 확률의 합은 1이 됩니다.
   
-- (Likelihood) 사건이 발생했을 때(n과 k가 관찰됨), 1회 시행시 발생확률 $\theta$ 에 따른 pmf를 계산한 값입니다. 이것은 $\theta$에 따른 사건의 발생가능도를 계산한 것으로 표현할 수 있습니다. 이 경우, $\sum_{\theta} f(k;n,\theta)$는 반드시 1은 아닙니다. 확률과 가능도는 pmf에 n, k, $\theta$를 넣어서 계산하므로 계산하는 방식은 동일하지만, 확률은 모든 n, k에 대한 합이 1이지만, 가능도는 모든 $\theta$에 대한 합이 1은 아니므로 이 점이 확률과 가능도의 다른 점이라고 할 수 있습니다.
+- (Likelihood) 사건이 발생했을 때(n과 k가 관찰됨), 1회 시행시 발생확률 $\theta$ 에 따른 pmf를 계산한 값입니다. 이것은 $\theta$에 따른 사건의 발생가능도를 계산한 것으로 표현할 수 있습니다. 이 경우, pmf는 \theta를 매개변수로 가지는 함수식이 되며, $\sum_{\theta} f(k;n,\theta)$는 반드시 1은 아닙니다. 
 
-- 최종 정리를 해보면, pmf에 대해 $\theta$ 가 주어지고, 관찰된 데이터(n,k)를 이용하여, 해당 데이터가 관찰될 확률을 구할 수 있습니다. pmf에 대해 관찰된 데이터가 주어졋을 때, 1회 시행시 발생확률 $\theta$를 변경하면서 사건의 발생 가능도를 계산할 수 있습니다.      
+- 최종 정리를 해보면, pmf에 대해 $\theta$가 주어지고, n과 k가 변수인 경우를 확률이라고 하며, 이때는 모든 n과 k에 대한 f(n,k)의 합은 1이됩니다. pmf에 대해 n과 k가 주어지고, $\theta$ 가 변수인 경유를 가능도라고 하며, 이때 모든 \$theta$에 대한 f( $\theta$ )의 합은 꼭 1이 되지 않습니다. 확률가 가능도는 동일한 pmf에 대해 어떤 매개변수를 주어진것으로 보고, 어떤 매개변수를 pmf라는 함수의 변수로 볼 것인지에 따라 달라지는 개념이라고 최종적으로 이해했습니다.
 
 ## 5. Maximum likelihood estimation(MLE)
 
