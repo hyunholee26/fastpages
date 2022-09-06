@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: 
-categories: [travel photography]
+categories: [Travel]
 title: Devil's bridge in Sedona (22.8.28)
 ---
 
