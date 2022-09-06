@@ -24,27 +24,27 @@ Spatiotemporal Analysis를 수강하면서, 가우시안 프로세스를 이해�
 
 > In probability theory, **[conditional probability](https://en.wikipedia.org/wiki/Conditional_probability)** is a measure of the probability of an event occurring, given that another event (by assumption, presumption, assertion or evidence) has already occurred.
 
-$$P(A | B) = \frac{P( A \cap B)}{P(B)}$$
+$$P(A \mid B) = \frac{P( A \cap B)}{P(B)}$$
 
 > Independence(독립) : Two events A and B are independent if and only if their joint probability equals the product of their probabilities
 
 $$P(A \cap B) = P(A) \cdot P(B)$$
 
-- 조건부 확률에서 P(A)와 P(B)가 독립인 경우, $P(A | B) = \frac{P( A \cap B)}{P(B)} = \frac{P(A) \cdot P(B)}{P(B)} = P(A)$가 성립하며, 조건부 확률로 사건A에 대해 사건B가 주어지는 경우와 주어지지 않는 경우의 확률이 같은 경우를 의미하는 것으로 이해할 수 있다. 또한 다른 말로 표현해보면, 전체에서 A가 발생할 확률과 사건B가 발생했을 때 사건A가 발생할 확률이 같은 경우를 의미하는 것으로도 이해할 수 있다. (독립인 경우, $P(A) \cap P(B) \neq 0$임) 
+- 조건부 확률에서 P(A)와 P(B)가 독립인 경우, $P(A \mid B) = \frac{P( A \cap B)}{P(B)} = \frac{P(A) \cdot P(B)}{P(B)} = P(A)$가 성립하며, 조건부 확률로 사건A에 대해 사건B가 주어지는 경우와 주어지지 않는 경우의 확률이 같은 경우를 의미하는 것으로 이해할 수 있다. 또한 다른 말로 표현해보면, 전체에서 A가 발생할 확률과 사건B가 발생했을 때 사건A가 발생할 확률이 같은 경우를 의미하는 것으로도 이해할 수 있다. (독립인 경우, $P(A) \cap P(B) \neq 0$임) 
 
 ## 3. Bayes's Theorem
 
  - Bayes' theorem is stated mathematically as the following equation:
 
-$$ P(A|B) = \frac {P(B|A) \cdot P(A)} {P(B)}, where \space P(B)\neq 0. $$
+$$ P(A \mid B) = \frac {P(B \mid A) \cdot P(A)} {P(B)}, where \space P(B)\neq 0. $$
 
  - Bayes's Theorem은 conditonal probability로 부터 유도됩니다.
 
-$$ P(A | B) = \frac{P( A \cap B)}{P(B)}, \space then \space P(A \cap B) = P(A | B) \cdot P(B) $$
+$$ P(A \mid B) = \frac{P( A \cap B)}{P(B)}, \space then \space P(A \cap B) = P(A \mid B) \cdot P(B) $$
 
-$$ P(B | A) = \frac{P( A \cap B)}{P(A)}, \space then \space P(A \cap B) = P(B | A) \cdot P(A) $$
+$$ P(B \mid A) = \frac{P( A \cap B)}{P(A)}, \space then \space P(A \cap B) = P(B \mid A) \cdot P(A) $$
 
-$$ hence, P(A | B) \cdot P(B) = P(B | A) \cdot P(A) $$
+$$ hence, P(A \mid B) \cdot P(B) = P(B \mid A) \cdot P(A) $$
 
 ## 4. Bayes's Theorem 예제
 
@@ -52,36 +52,36 @@ $$ hence, P(A | B) \cdot P(B) = P(B | A) \cdot P(A) $$
 실제 폐암에 걸렸을 확률은 얼마인가?
 
 - 구해야할 확률과 문제에서 주어진 확률을 구분해보면,
-  - 우리가 구해야할 확률 : $P(폐암|양성)$
+  - 우리가 구해야할 확률 : $P(폐암 \mid 양성)$
   - 문제에서 주어진 확률은, 
 
 $$P(폐암) = 0.03 \space (\Rightarrow P(정상) = 0.97), $$
 
-$$P(양성|폐암) = 0.99 \space (\Rightarrow P(양성|정상) = 0.01)$$
+$$P(양성 \mid 폐암) = 0.99 \space (\Rightarrow P(양성 \mid 정상) = 0.01)$$
 
-- $P(폐암|양성)$을 직접 계산할 수 없기 때문에, Bayes's theorem을 이용하면, 
+- $P(폐암 \mid 양성)$을 직접 계산할 수 없기 때문에, Bayes's theorem을 이용하면, 
 
-$$P(폐암|양성) = P(양성|폐암) \cdot P(폐암) / P(양성)$$
+$$P(폐암 \mid 양성) = P(양성 \mid 폐암) \cdot P(폐암) / P(양성)$$
 
-$$P(양성) = P(양성|정상) \cdot P(정상) + P(양성|폐암) \cdot P(폐암)$$
+$$P(양성) = P(양성 \mid 정상) \cdot P(정상) + P(양성 \mid 폐암) \cdot P(폐암)$$
 
 - 이며, 이를 계산하면, $P(양성) = 0.01 * 0.97 + 0.99 * 0.03 = 0.03939109$
 
-- 따라서 $P(폐암|양성) = 0.99 * 0.03 / 0.03939109 = 0.7539776127037866$
+- 따라서 $P(폐암 \mid 양성) = 0.99 * 0.03 / 0.03939109 = 0.7539776127037866$
 이며, 약 75%임.
 
 ## 5. Likelihood 
 
-- Likelihood는 우리나라말로 가능도로 번역됩니다. Probability와 Likelihood는 다소 헷갈리는 개념인데요, 저는 통계를 깊이있게 공부하는 사람은 아니기때문에 있는 그대로 표현해보겠습니다. 
-- Binomial distribution을 예로 살펴보면, pmf는 n은 전체시행횟수, k는 이벤트발생횟수, $\theta$가 확률(probability)이 매개변수인 함수식입니다.
+- Likelihood는 가능도로 번역됩니다. Probability와 Likelihood는 다소 헷갈리는 개념인데요, 저는 통계를 깊이있게 공부하는 사람은 아니기 때문에 이 지식을 사용하기 위한 목적으로만 있는 그대로 표현해보겠습니다. 
+- Binomial distribution의 pmf를 예로 들겠습니다. 이 pmf는 n은 전체시행횟수, k는 이벤트발생횟수, $\theta$가 1회 시행시 발생확률을 매개변수로 하는 함수식입니다.
 
 $$ \Pr(K = k) = f(k;n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
 
-- 사건의 발생확률은 우리가 믿고 있는 확률p가 주어지고, 사건(데이터)이 발생했을 때(n과 k가 결정되었을 때) pmf를 계산한 값입니다. $\sum_k^{n} f(k;n,\theta) = 1$입니다.
-  - 다시 표현하면, p가 주어져 있고, data가 관찰되었을 때, 그 data가 발생할 확률을 구하는 것입니다. 
-- 가능도는 data가 주어졌을 때, n과 k가 주어지고, 확률p에 따른 사건의 발생가능도를 계산합니다.  
+- (Probability) 우리가 믿고 있는 1회 시행시 발생확률 $\theta$ 가 주어지고, 사건이 발생했을 때(n과 k가 관찰됨), pmf를 계산한 값입니다. $\sum_k^{n} f(k;n,\theta) = 1$입니다. 다시 표현하면, $\theta$가 주어지고, data가 관찰되었을 때, data가 발생할 확률을 구하는 것이며, 발생가능한 모든 data의 확률의 합은 1이 됩니다.
+  
+- (Likelihood) 사건이 발생했을 때(n과 k가 관찰됨), 1회 시행시 발생확률 $\theta$ 에 따른 pmf를 계산한 값입니다. 이것은 $\theta$에 따른 사건의 발생가능도를 계산한 것으로 표현할 수 있습니다. 이 경우, $\sum_{\theta} f(k;n,\theta)$는 반드시 1은 아닙니다. 확률과 가능도는 pmf에 n, k, $\theta$를 넣어서 계산하므로 계산하는 방식은 동일하지만, 확률은 모든 n, k에 대한 합이 1이지만, 가능도는 모든 $\theta$에 대한 합이 1은 아니므로 이 점이 확률과 가능도의 다른 점이라고 할 수 있습니다.
 
-
+- 최종 정리를 해보면, pmf에 대해 $\theta$ 가 주어지고, 관찰된 데이터(n,k)를 이용하여, 해당 데이터가 관찰될 확률을 구할 수 있습니다. pmf에 대해 관찰된 데이터가 주어졋을 때, 1회 시행시 발생확률 $\theta$를 변경하면서 사건의 발생 가능도를 계산할 수 있습니다.      
 
 ## 5. Maximum likelihood estimation(MLE)
 
@@ -91,19 +91,19 @@ $$ \Pr(K = k) = f(k;n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
 - We pick the distribution family p(·), but don’t know the parameter θ
 - MLE를 수식으로 표현하면 아래와 같습니다.
 
-$$\hat \theta_{MLE} = \underset{\theta}{\operatorname{argmax}} p(x_1, x_2, \dots, x_n|\theta)$$
+$$\hat \theta_{MLE} = \underset{\theta}{\operatorname{argmax}} p(x_1, x_2, \dots, x_n \mid \theta)$$
 
 - Assume data is independent and identically distributed (iid). This is written
 
-$$ x_i \overset{i.i.d}{\sim} p(x|\theta), i = 1, \dots, n$$
+$$ x_i \overset{i.i.d}{\sim} p(x \mid \theta), i = 1, \dots, n$$
 
-- Writing the density as $p(x|θ)$, then the joint density decomposes as
+- Writing the density as $p(x \mid θ)$, then the joint density decomposes as
 
-$$ p(x_1, x_2, \dots, x_n|\theta) = \prod_{i=1}^n p(x_i | \theta) $$
+$$ p(x_1, x_2, \dots, x_n \mid \theta) = \prod_{i=1}^n p(x_i \mid \theta) $$
 
 - 그리고 다음과 같이 Maximum Likelihood가 되는 파라메터(θ)를 추정할 수 있습니다. 
 
-$$ \nabla_{\theta} p(x_1, x_2, \dots, x_n|\theta) = \nabla_{\theta} \prod_{i=1}^n p(x_i | \theta) = 0 $$
+$$ \nabla_{\theta} p(x_1, x_2, \dots, x_n \mid \theta) = \nabla_{\theta} \prod_{i=1}^n p(x_i \mid \theta) = 0 $$
 
 - Logarithm tric : It is complicated to calcuate it directly. So we use the fact that the logarithm is monotonically increasing on R+, and the equality
 
@@ -123,7 +123,7 @@ $$ \Pr(K = k) = f(k;n,\theta)={n\choose k}\theta^k(1-\theta)^{n-k} $$
 
 - 파라메터 θ를 MLE로 추정해보면,
 
-$$ \nabla_{\theta} \prod_{i=1}^n p(x_i | \theta) = \nabla_{\theta} ln(\prod_{i=1}^n p(x_i | \theta)) = \nabla_{\theta} ln({n\choose k}\theta^k(1-\theta)^{n-k}) = 0$$
+$$ \nabla_{\theta} \prod_{i=1}^n p(x_i \mid \theta) = \nabla_{\theta} ln(\prod_{i=1}^n p(x_i \mid \theta)) = \nabla_{\theta} ln({n\choose k}\theta^k(1-\theta)^{n-k}) = 0$$
 
 $$ \nabla_{\theta} ln(\theta^k(1-\theta)^{n-k}) = \nabla_{\theta} k \cdot ln(\theta) + (n-k) \cdot ln(1-\theta) = \displaystyle \frac{k}{\theta} - \frac{n-k}{1- \theta} = 0$$
 
@@ -185,7 +185,7 @@ $$ $$
 
 - The general form of its probability density function is
 
-$$ {\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\frac {1}{2}}({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})\right)}{\sqrt {(2\pi )^{k}|{\boldsymbol {\Sigma }}|}}}} $$
+$$ {\displaystyle f_{\mathbf {X} }(x_{1},\ldots ,x_{k})={\frac {\exp \left(-{\frac {1}{2}}({\mathbf {x} }-{\boldsymbol {\mu }})^{\mathrm {T} }{\boldsymbol {\Sigma }}^{-1}({\mathbf {x} }-{\boldsymbol {\mu }})\right)}{\sqrt {(2\pi )^{k} \lVert {\boldsymbol {\Sigma }} \rVert }}}} $$
 
 - (참고) Mahalanobis distance
 > The Mahalanobis distance is a measure of the distance between a point P and a distribution D
@@ -287,7 +287,7 @@ $L$
 $\Sigma = \sigma^2I$
 . The density is
 
-$$ p(y|\mu, \sigma^2) = \frac{1}{(2 \pi \sigma^2)^{\frac{n}{2}}} exp(-\frac{1}{2 \sigma^2}(y-\mu)^T(y-\mu)) $$
+$$ p(y \mid \mu, \sigma^2) = \frac{1}{(2 \pi \sigma^2)^{\frac{n}{2}}} exp(-\frac{1}{2 \sigma^2}(y-\mu)^T(y-\mu)) $$
 
 - Plug
 $\mu = Xw$
@@ -295,7 +295,7 @@ into the multivariate Gaussian distribution and solve for
 $w$
 using maximum likelihood
 
-$$ w_{ML} = \underset{w}{\operatorname{argmax}} ln \space p(y|\mu = Xw, \sigma^2)$$
+$$ w_{ML} = \underset{w}{\operatorname{argmax}} ln \space p(y \mid \mu = Xw, \sigma^2)$$
 
 $$ = \underset{w}{\operatorname{argmax}} -\frac{1}{2 \sigma^2} \lVert y - Xw \rVert^2 - \frac{n}{2}ln(2 \pi \sigma^2)$$
 
@@ -344,19 +344,19 @@ $$ Prior: \space w \sim N(0, \lambda^{-1}I) $$
  
  - Maximum a posteriori (MAP) estimation seeks the most probable value $w$ under the posterior:
  
- $$ w_{MAP} = \underset{w}{\operatorname{argmax}} \space ln \space p(w|y,X) $$
+ $$ w_{MAP} = \underset{w}{\operatorname{argmax}} \space ln \space p(w \mid y,X) $$
  
- $$ = \underset{w}{\operatorname{argmax}} \space ln \frac{p(y|w,X_)p(w)}{p(y|X)} $$
+ $$ = \underset{w}{\operatorname{argmax}} \space ln \frac{p(y \mid w,X_)p(w)}{p(y \mid X)} $$
  
- $$ = \underset{w}{\operatorname{argmax}} \space ln \space p(y|w,X) + ln \space p(w) - ln \space p(y|X) $$
+ $$ = \underset{w}{\operatorname{argmax}} \space ln \space p(y \mid w,X) + ln \space p(w) - ln \space p(y \mid X) $$
  
- - The normalizing constant term $ln \space p(y|X)$ doesn't involve $w$. Therefore, we can maximize the first two terms alone.
+ - The normalizing constant term $ln \space p(y \mid X)$ doesn't involve $w$. Therefore, we can maximize the first two terms alone.
 
-- In many models we don't know $ln \space p(y|X)$, so this fact is useful. 
+- In many models we don't know $ln \space p(y \mid X)$, so this fact is useful. 
 
 - Hence,
 
-$$ w_{MAP} = \underset{w}{\operatorname{argmax}} \space ln \space p(y|w,X) + ln \space p(w) $$
+$$ w_{MAP} = \underset{w}{\operatorname{argmax}} \space ln \space p(y \mid w,X) + ln \space p(w) $$
 
 $$ = \underset{w}{\operatorname{argmax}} \space - \frac{1}{2 \sigma^2}(y - Xw)^T(y-Xw) - \frac{\lambda}{2}w^Tw + const $$
 
@@ -379,7 +379,7 @@ $$ prior \rightarrow likelihood \rightarrow posterior $$
 
 - Bayesian learning is naturally thought of a sequential process. That is, the posterior after seeing some data becomes the prior for the next data.
 
-- Maximum likelihood는 데이터가 주어졌을 때, OLS라는 목적함수를 최소화하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution을 가정하고, 데이터가 주어졌을 때, prior distribution을 만족하는 w를 찾는 방법이다. 이 때, $p(w|y,X)$를 바로 구하기 어렵기 때문에, likelihood와 prior의 곱을 최소로 하는 w를 찾는다. 
+- Maximum likelihood는 데이터가 주어졌을 때, OLS라는 목적함수를 최소화하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution을 가정하고, 데이터가 주어졌을 때, prior distribution을 만족하는 w를 찾는 방법이다. 이 때, $p(w \mid y,X)$를 바로 구하기 어렵기 때문에, likelihood와 prior의 곱을 최소로 하는 w를 찾는다. 
  
 ## 10. Random process
 
