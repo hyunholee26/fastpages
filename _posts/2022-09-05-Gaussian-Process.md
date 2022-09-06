@@ -111,9 +111,7 @@ $$\underset{\theta}{\operatorname{argmax}} g(y) = \underset{\theta}{\operatornam
 
 $$ ln(\prod_i f_i) = \sum_i ln(f_i) $$
 
-- 데이터 특징에 따라 선택할 수 있는 분포들은 binomial, poisson, gaussian 등이 있습니다. 
-
-- MLE는 빈도주의자들의 
+- 데이터 특징에 따라 선택할 수 있는 분포들은 binomial, poisson, gaussian 등이 있습니다.  
 
 ## 7. MLE 예제
 
