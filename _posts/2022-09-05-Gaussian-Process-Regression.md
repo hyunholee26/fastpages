@@ -2,9 +2,9 @@
 toc: true
 layout: post
 description: 
-categories: [Gaussian Process]
+categories: [PRML]
 comments: true
-title: Gaussian Process 이해하기(작성중)
+title: Gaussian Process Regression 이해하기 (작성중)
 ---
 
 ## 0. 들어가며
