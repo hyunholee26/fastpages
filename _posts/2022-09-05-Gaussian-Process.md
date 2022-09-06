@@ -4,11 +4,11 @@ layout: post
 description: 
 categories: [Gaussian Process]
 comments: true
-title: Gaussian Process 이해하기
+title: Gaussian Process 이해하기(작성중)
 ---
 
 ## 0. 들어가며
-Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다. 
+Spatiotemporal Analysis를 수강하면서, Gaussian Process(가우시안 프로세스)를 이해하기 위해 필요한 지식들을 정리한 글입니다.  
 - 참고자료 : [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 - 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다. 
 
