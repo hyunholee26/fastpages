@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Random Process 기초 (작성중)" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="참고자료 : https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php" />
-<meta property="og:description" content="참고자료 : https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php" />
+<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Random Process를 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따릅니다. 참고자료 : https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php" />
+<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Random Process를 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따릅니다. 참고자료 : https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php" />
 <link rel="canonical" href="https://hyunholee26.github.io/fastpages/statistics/2022/09/04/Random-Process.html" />
 <meta property="og:url" content="https://hyunholee26.github.io/fastpages/statistics/2022/09/04/Random-Process.html" />
 <meta property="og:site_name" content="Hyunho Lee" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Random Process 기초 (작성중)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-04T00:00:00-05:00","datePublished":"2022-09-04T00:00:00-05:00","description":"참고자료 : https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php","headline":"Random Process 기초 (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/statistics/2022/09/04/Random-Process.html"},"url":"https://hyunholee26.github.io/fastpages/statistics/2022/09/04/Random-Process.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-04T00:00:00-05:00","datePublished":"2022-09-04T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, Random Process를 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따릅니다. 참고자료 : https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php","headline":"Random Process 기초 (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/statistics/2022/09/04/Random-Process.html"},"url":"https://hyunholee26.github.io/fastpages/statistics/2022/09/04/Random-Process.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hyunholee26.github.io/fastpages/feed.xml" title="Hyunho Lee" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -127,7 +127,72 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-</ul><p>참고자료 : <a href="https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php">https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php</a></p>
+<li class="toc-entry toc-h2"><a href="#0-들어가며">0. 들어가며</a></li>
+<li class="toc-entry toc-h2"><a href="#1-ramdom-process">1. Ramdom Process</a></li>
+<li class="toc-entry toc-h2"><a href="#2-random-processes-as-random-functions">2. Random Processes as Random Functions:</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#31">3.1</a></li>
+</ul>
+</li>
+</ul><h2 id="0-들어가며">
+<a class="anchor" href="#0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>0. 들어가며</h2>
+<p>Spatiotemporal Analysis를 수강하면서, Random Process를 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따릅니다.</p>
+<ul>
+  <li>참고자료 : <a href="https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php">https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php</a>
+</li>
+</ul>
+
+<h2 id="1-ramdom-process">
+<a class="anchor" href="#1-ramdom-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Ramdom Process</h2>
+<p>A <strong>random process</strong> is <strong>a collection of random variables</strong> usually indexed by time. 랜덤프로세스는 인덱스트된 확률변수들의 모임으로 정의되며, 각 요소는 확률변수와 동일하게 다루면 되는 것으로 이해했습니다. 보통은 시간으로 index되지만, 공간의 경우, 2차원 또는 3차원으로 확장되어 index될 수 있습니다. 랜덤프로세스는 인덱스에 따라 아래와 같이 구분됩니다.</p>
+
+<ul>
+  <li>
+<strong>descrete-time</strong> random process
+    <blockquote>
+      <p>A continuous-time random process is a random process {X(t),t∈J}, where J is an interval on the real line such as [−1,1], [0,∞), (−∞,∞), etc.</p>
+    </blockquote>
+  </li>
+  <li>
+<strong>continuous-time</strong> random process
+    <blockquote>
+      <p>A discrete-time random process (or a random sequence) is a random process {X(n)=Xn,n∈J}, where J is a countable set such as N or Z.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>또한, 확률변수가 가지는 값의 종류에 따라 아래와 같이 구분할 수 있습니다.</p>
+<ul>
+  <li>
+<strong>descrete-valued</strong> random process</li>
+  <li>
+<strong>continuous-valued</strong> random process</li>
+</ul>
+
+<p>(연습문제) $X_n = 1000(1+R)^n, for \space n = 0,1,2, \cdots.$ 이고, $R ~ Uniform(0.04, 0.05)$인 경우, $E[X_3]$을 구하면,</p>
+
+<ul>
+  <li>The random variable $X_3$ is given by $X_3 = 1000(1+R)^3$.</li>
+  <li>If you let $Y = 1 + R$, then $Y ~ Uniform(1.04, 1.05)$, so
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>Y</mi></msub><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>100</mn><mtext> </mtext><mn>1.04</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mn>1.05</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mtext> </mtext><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>w</mi><mi>i</mi><mi>s</mi><mi>e</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f_Y(y) = \begin{cases} 100 \: 1.04 \le y \le 1.05 \\ 0 \: otherwise \end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.22222em;">Y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">100</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1.04</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1.05</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">i</span><span class="mord mathnormal">se</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>
+</li>
+</ul>
+
+<h2 id="2-random-processes-as-random-functions">
+<a class="anchor" href="#2-random-processes-as-random-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Random Processes as Random Functions:</h2>
+<p>A random process is a random function of time.</p>
+<ul>
+  <li>random process는 index(여기서는 시간)에 따른 random function으로 볼 수 있습니다.</li>
+</ul>
+
+<p>We call each of these possible functions of X(t) a sample function or sample path. It is also called a realization of X(t).</p>
+<ul>
+  <li>X(t)로서 가능한 모든 함수들을 sample function, sample path 또는 realization of X(t)라고 부릅니다. In engineering applications, random processes are often referred to as random signals. (공간통계는 주로 2차원의 공간데이터를 다루어서 index가 2차원 또는 3차원인 경우 random field라고 부릅니다.)</li>
+</ul>
+
+<h3 id="31">
+<a class="anchor" href="#31" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1</h3>
+
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
