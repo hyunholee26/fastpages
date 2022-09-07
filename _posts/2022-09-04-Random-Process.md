@@ -27,8 +27,16 @@ A **random process** is **a collection of random variables** usually indexed by 
 (연습문제) $X_n = 1000(1+R)^n, for \space n = 0,1,2, \cdots.$ 이고, $R ~ Uniform(0.04, 0.05)$인 경우, $E[X_3]$을 구하면,
 
  - The random variable $X_3$ is given by $X_3 = 1000(1+R)^3$.
- - If you let $Y = 1 + R$, then $Y ~ Uniform(1.04, 1.05)$, so
-$$f_Y(y) = \begin{cases} 100 \: 1.04 \le y \le 1.05 \\ 0 \: otherwise \end{cases} $$
+ - If you let $Y = 1 + R$, then $Y \sim Uniform(1.04, 1.05)$, so
+$$f_Y(y) = \begin{cases} 100 \quad 1.04 \le y \le 1.05 \qquad \because 1/(1.05 - 1.04) = 100 \newline \newline 0 \qquad otherwise \end{cases} $$
+
+ - To obtain $E[X_3]$, we can write
+ $$E[X_3] = 1000E[Y^3]$$
+ $$ = 1000\int_1.04^1.05 100y^3 dy$$
+ $$ = \frac{10^5}{4} [ y^4 ]_{1.04}^{1.05}$$
+ $$ = \frac{10^5}{4} [(1.05)^4 - (1.04)^4]$$
+ $$ \approx 1141.2$$
+ 
 
 ## 2. Random Processes as Random Functions:
 A random process is a random function of time.
