@@ -32,9 +32,13 @@ $$f_Y(y) = \begin{cases} 100 \quad 1.04 \le y \le 1.05 \qquad \because 1/(1.05 -
 
  - To obtain $E[X_3]$, we can write
  $$E[X_3] = 1000E[Y^3]$$
+ 
  $$ = 1000\int_1.04^1.05 100y^3 dy$$
+ 
  $$ = \frac{10^5}{4} [ y^4 ]_{1.04}^{1.05}$$
+ 
  $$ = \frac{10^5}{4} [(1.05)^4 - (1.04)^4]$$
+ 
  $$ \approx 1141.2$$
  
 
@@ -44,12 +48,6 @@ A random process is a random function of time.
 
 We call each of these possible functions of X(t) a sample function or sample path. It is also called a realization of X(t). 
 - X(t)로서 가능한 모든 함수들을 sample function, sample path 또는 realization of X(t)라고 부릅니다. In engineering applications, random processes are often referred to as random signals. (공간통계는 주로 2차원의 공간데이터를 다루어서 index가 2차원 또는 3차원인 경우 random field라고 부릅니다.)
-
-
-
-
-### 3.1
-
  
  
 
