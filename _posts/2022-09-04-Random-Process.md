@@ -9,20 +9,14 @@ title: Random Process 기초 (작성중)
 
 ## 0. 들어가며
 Spatiotemporal Analysis를 수강하면서, Random Process를 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다.
-- 참고자료 : [https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php](https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php)
+- 참고자료
+  - [https://pasus.tistory.com/209?category=1287736](https://pasus.tistory.com/209?category=1287736) 
+  - [https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php](https://www.probabilitycourse.com/chapter10/10_1_0_basic_concepts.php)
 
 ## 1. Ramdom Process
-A **random process** is **a collection of random variables** usually indexed by time. 랜덤프로세스는 인덱스트된 확률변수들의 모임으로 정의되며, 각 요소는 확률변수와 동일하게 다루면 되는 것으로 이해했습니다. 보통은 시간으로 index되지만, 공간의 경우, 2차원 또는 3차원으로 확장되어 index될 수 있습니다. 랜덤프로세스는 인덱스에 따라 아래와 같이 구분됩니다.
-
- - **descrete-time** random process
- > A continuous-time random process is a random process {X(t),t∈J}, where J is an interval on the real line such as [−1,1], [0,∞), (−∞,∞), etc.
- 
- - **continuous-time** random process
- > A discrete-time random process (or a random sequence) is a random process {X(n)=Xn,n∈J}, where J is a countable set such as N or Z.
-
-또한, 확률변수가 가지는 값의 종류에 따라 아래와 같이 구분할 수 있습니다.
- - **descrete-valued** random process
- - **continuous-valued** random process
+A **random process** is **a collection of random variables** usually indexed by time. 
+ - 랜덤변수(random variable)는 확률 실험의 결과에 실숫값을 대응시키는 함수로 정의된다. 또한 랜덤 프로세스(random process)는 어떤 파라미터로 인덱스(index)된 무한개의 랜덤변수의 집합으로 정의된다.
+ - 인덱스 파라미터를 고정시킨다면 랜덤 프로세스는 랜덤변수가 된다.
 
 (연습문제1) $X_n = 1000(1+R)^n, for \space n = 0,1,2, \cdots.$ 이고, $R \sim Uniform(0.04, 0.05)$인 경우, $E[X_3]$ 는?
 
@@ -120,14 +114,31 @@ Var(X+Y) &= E[(X+Y)^2] - (E[X+Y])^2 \\
 &= Var(X) + Var(Y)
 \end{aligned}$$
 
+
 ## 2. Random Processes as Random Functions:
 A random process is a random function of time.
-- random process는 index(여기서는 시간)에 따른 random function으로 볼 수 있습니다.
+- random process는 index에 따른 random function으로 볼 수 있다.
 
 We call each of these possible functions of X(t) a sample function or sample path. It is also called a realization of X(t). 
-- X(t)로서 가능한 모든 함수들을 sample function, sample path 또는 realization of X(t)라고 부릅니다. In engineering applications, random processes are often referred to as random signals. (공간통계에서는 주로 2차원의 공간데이터를 다루어서 index가 2차원 또는 3차원인 경우 random field라고 부릅니다.)
- 
- 
+- X(t)로서 가능한 모든 함수들을 sample function, sample path 또는 realization of X(t)라고 부릅니다. 
 
 
+## 3. Mean Function of a Random Process
+For a random process ${X(t), t \in J}$, the mean function $\mu_X(t) : J \leftarrow R$, is defined as
 
+$$\mu_X = E[X(t)]$$
+
+
+## 4. Autocorrelation and Autocovariance
+For a random process ${X(t), t \in J}$, the autocorrelation function or, simply, the correlation function, $R_X(t_1, t_2)$ is defined by
+
+$$R_X(t1, t2) = E[X(t_1)X(t_2)], \space for \space t1, t2 \in J$$
+
+For a random process ${X(t), t \in J}$, the autocovariance function or, simply, the covariance function, $C_X(t_1, t_2)$ is defined by
+
+$$\begin{aligned}
+C_X(t1, t2) &= Cov(X(t_1), X(t_2)) \\
+&= R_X(t_1, t_2) - \mu_X(t_1)\mu_X(t_2), \space for \space t_1, t_2 \in J
+\end{aligned}$$
+
+ - Intuitively, $C_X(t1, t2)$ shows how $X(t_1)$ and $X(t_2)$ move relative to each other. If large values of $X(t_1)$ tend to imply large values of $X(t_2)$, then $(X(t_1) - E[X(t_1)])(X(t_2) - E[X(t_2])$ is positive on average. In this case, $C_X(t_1, t_2)$ is positive, and we say $X(t_1)$ and $X(t_2)$ are positively correlated. On the other hand, if large values of $X(t_1)$ imply small values of $X(t_2)$, then $(X(t_1) - E[X(t_1)])(X(t_2) - E[X(t_2)])$ is negative on average, and we say $X(t_1)$ and $X(t_2)$ are negatively correlated. If $C_X(t_1, t_2) = 0$ then $X(t_1)$ and $X(t_2)$ are uncorrelated.
