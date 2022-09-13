@@ -4,7 +4,7 @@ layout: post
 description: 
 categories: [Statistics]
 comments: true
-title: Random Process 기초 (작성중)
+title: Random Process 기초 
 ---
 
 ## 0. 들어가며
