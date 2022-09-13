@@ -4,13 +4,13 @@ layout: post
 description: 
 categories: [Machine Learning]
 comments: true
-title: Gaussian Process Regression 이해하기 (작성중)
+title: Gaussian Process Regression 이해를 위한 기초지식
 ---
 
 ## 0. 들어가며
 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다.  
 - 참고자료 : [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
-- 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다. 
+- 이 책의 chpater1 ~ 6을 읽고 Gaussian Process regression을 이해하기 위해 필요한 기초지식들을 다시 정리하였습니다. 
 
 ## 1. Probability
 
@@ -322,45 +322,5 @@ $$ prior \rightarrow likelihood \rightarrow posterior $$
 
 - Maximum likelihood는 데이터가 주어졌을 때, OLS라는 목적함수를 최소화하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution을 가정하고, 데이터가 주어졌을 때, prior distribution을 만족하는 w를 찾는 방법이다. 이 때, $p(w \mid y,X)$를 바로 구하기 어렵기 때문에, likelihood와 prior의 곱을 최소로 하는 w를 찾는다. 
  
-## 12. Random process
-
-### 12.1 Definition
-
-- A random process is a collection of random variables usually indexed by time.
-  - A continuous-time random process is a random process ${X(t),t \in J}$, where $J$ is an interval on the real line such as $[−1,1], [0,\infty), (-\infty, \infty)$, etc.
-  - A discrete-time random process (or a random sequence) is a random process ${X(n)=X_n, \space n \in J}$, where $J$ is a countable set such as N or Z.
-
-- **A random process is a random function of time.**
-
-## 13. Kernel
-
-## 14. Gaussian process
-
-- A **random process** X(t) is a Gaussian process if for all k ∈ N for all t1, ... ,tk , a random vector formed by X(1), ... , X(tk) is jointly Gaussian.
-- The joint density is completely specified by
- - Mean: m(t) = E(X(t)), where m(·) is known as a mean function.
- - Covariance: k(t, s) = Cov(X(t), X(s)), where k(·,·) is known as a covariance function.
-- Notation:
-
-$$X(t) \sim GP(m(t), k(t,s))$$ 
-
-- Example: X(t) = tA, where 
-$A \sim N(0,1)$
-and t ∈ R
-  - Mean: m(t) = E(X(t)) = tE(A) = 0
-  - Covariance: k(t,s) = E(tAsA) = ts
-
-- **Gaussian process** and **Gaussian process regression** are different.
-
-## 15. Gaussian process regression
-
-- A nonparametric **Bayesian regression** method using the properties of **Gaussian processes**.
-- Two views to interpret Gaussian process regression
-  - Weight-space view
-  - Function-space view
-
-### 15.1 Weight-space view
-### 15.2 Function-space view
-
 
 
