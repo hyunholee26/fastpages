@@ -4,7 +4,7 @@ layout: post
 description: 
 categories: [Statistics]
 comments: true
-title: Random Process 
+title: Random Process
 ---
 
 ## 0. 들어가며
@@ -141,4 +141,6 @@ C_X(t1, t2) &= Cov(X(t_1), X(t_2)) \\
 &= R_X(t_1, t_2) - \mu_X(t_1)\mu_X(t_2), \space for \space t_1, t_2 \in J
 \end{aligned}$$
 
- - Intuitively, $C_X(t1, t2)$ shows how $X(t_1)$ and $X(t_2)$ move relative to each other. If large values of $X(t_1)$ tend to imply large values of $X(t_2)$, then $(X(t_1) - E[X(t_1)])(X(t_2) - E[X(t_2])$ is positive on average. In this case, $C_X(t_1, t_2)$ is positive, and we say $X(t_1)$ and $X(t_2)$ are positively correlated. On the other hand, if large values of $X(t_1)$ imply small values of $X(t_2)$, then $(X(t_1) - E[X(t_1)])(X(t_2) - E[X(t_2)])$ is negative on average, and we say $X(t_1)$ and $X(t_2)$ are negatively correlated. If $C_X(t_1, t_2) = 0$ then $X(t_1)$ and $X(t_2)$ are uncorrelated.
+ - Intuitively, $C_X(t1, t2)$ shows how $X(t_1)$ and $X(t_2)$ move relative to each other. If large values of $X(t_1)$ tend to imply large values of $X(t_2)$, then $(X(t_1) - E[X(t_1)])(X(t_2) - E[X(t_2])$ is positive on average. In this case, $C_X(t_1, t_2)$ is positive, and we say $X(t_1)$ and $X(t_2)$ are positively correlated. 
+ - On the other hand, if large values of $X(t_1)$ imply small values of $X(t_2)$, then $(X(t_1) - E[X(t_1)])(X(t_2) - E[X(t_2)])$ is negative on average, and we say $X(t_1)$ and $X(t_2)$ are negatively correlated. 
+ - If $C_X(t_1, t_2) = 0$ then $X(t_1)$ and $X(t_2)$ are uncorrelated.
