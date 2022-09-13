@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Gaussian Process Regression 이해하기 (작성중) | Hyunho Lee</title>
+<title>Gaussian Process Regression 이해를 위한 기초지식 | Hyunho Lee</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Gaussian Process Regression 이해하기 (작성중)" />
+<meta property="og:title" content="Gaussian Process Regression 이해를 위한 기초지식" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다." />
-<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다." />
+<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process regression을 이해하기 위해 필요한 기초지식들을 다시 정리하였습니다." />
+<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process regression을 이해하기 위해 필요한 기초지식들을 다시 정리하였습니다." />
 <link rel="canonical" href="https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html" />
 <meta property="og:url" content="https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html" />
 <meta property="og:site_name" content="Hyunho Lee" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-09-05T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Gaussian Process Regression 이해하기 (작성중)" />
+<meta property="twitter:title" content="Gaussian Process Regression 이해를 위한 기초지식" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다.","headline":"Gaussian Process Regression 이해하기 (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"},"url":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다. 참고자료 : Pattern Recognition and Machine Learning 이 책의 chpater1 ~ 6을 읽고 Gaussian Process regression을 이해하기 위해 필요한 기초지식들을 다시 정리하였습니다.","headline":"Gaussian Process Regression 이해를 위한 기초지식","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"},"url":"https://hyunholee26.github.io/fastpages/machine%20learning/2022/09/05/Gaussian-Process-Regression.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hyunholee26.github.io/fastpages/feed.xml" title="Hyunho Lee" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -104,13 +104,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Gaussian Process Regression 이해하기 (작성중)</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-05T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Gaussian Process Regression 이해를 위한 기초지식</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-05T00:00:00-05:00" itemprop="datePublished">
         Sep 5, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      13 min read
     
 </span></p>
 
@@ -156,26 +156,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#113-point-estimates">11.3 Point estimates</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#12-random-process">12. Random process</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#121-definition">12.1 Definition</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#13-kernel">13. Kernel</a></li>
-<li class="toc-entry toc-h2"><a href="#14-gaussian-process">14. Gaussian process</a></li>
-<li class="toc-entry toc-h2"><a href="#15-gaussian-process-regression">15. Gaussian process regression</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#151-weight-space-view">15.1 Weight-space view</a></li>
-<li class="toc-entry toc-h3"><a href="#152-function-space-view">15.2 Function-space view</a></li>
-</ul>
-</li>
 </ul><h2 id="0-들어가며">
 <a class="anchor" href="#0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>0. 들어가며</h2>
 <p>Spatiotemporal Analysis를 수강하면서, Gaussian Process Regression 이해하기 위해 필요한 지식들을 정리한 글입니다.</p>
 <ul>
   <li>참고자료 : <a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">Pattern Recognition and Machine Learning</a>
 </li>
-  <li>이 책의 chpater1 ~ 6을 읽고 Gaussian Process를 중심으로 다시 정리하였습니다.</li>
+  <li>이 책의 chpater1 ~ 6을 읽고 Gaussian Process regression을 이해하기 위해 필요한 기초지식들을 다시 정리하였습니다.</li>
 </ul>
 
 <h2 id="1-probability">
@@ -699,69 +686,6 @@ $y \sim N(Xw, \sigma^2I)$</p>
     <p>Maximum likelihood는 데이터가 주어졌을 때, OLS라는 목적함수를 최소화하는 w를 찾는 것이라면, MAP는 w에 대한 prior distribution을 가정하고, 데이터가 주어졌을 때, prior distribution을 만족하는 w를 찾는 방법이다. 이 때, $p(w \mid y,X)$를 바로 구하기 어렵기 때문에, likelihood와 prior의 곱을 최소로 하는 w를 찾는다.</p>
   </li>
 </ul>
-
-<h2 id="12-random-process">
-<a class="anchor" href="#12-random-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>12. Random process</h2>
-
-<h3 id="121-definition">
-<a class="anchor" href="#121-definition" aria-hidden="true"><span class="octicon octicon-link"></span></a>12.1 Definition</h3>
-
-<ul>
-  <li>A random process is a collection of random variables usually indexed by time.
-    <ul>
-      <li>A continuous-time random process is a random process ${X(t),t \in J}$, where $J$ is an interval on the real line such as $[−1,1], [0,\infty), (-\infty, \infty)$, etc.</li>
-      <li>A discrete-time random process (or a random sequence) is a random process ${X(n)=X_n, \space n \in J}$, where $J$ is a countable set such as N or Z.</li>
-    </ul>
-  </li>
-  <li><strong>A random process is a random function of time.</strong></li>
-</ul>
-
-<h2 id="13-kernel">
-<a class="anchor" href="#13-kernel" aria-hidden="true"><span class="octicon octicon-link"></span></a>13. Kernel</h2>
-
-<h2 id="14-gaussian-process">
-<a class="anchor" href="#14-gaussian-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>14. Gaussian process</h2>
-
-<ul>
-  <li>A <strong>random process</strong> X(t) is a Gaussian process if for all k ∈ N for all t1, … ,tk , a random vector formed by X(1), … , X(tk) is jointly Gaussian.</li>
-  <li>The joint density is completely specified by</li>
-  <li>Mean: m(t) = E(X(t)), where m(·) is known as a mean function.</li>
-  <li>Covariance: k(t, s) = Cov(X(t), X(s)), where k(·,·) is known as a covariance function.</li>
-  <li>Notation:</li>
-</ul>
-
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>X</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>∼</mo><mi>G</mi><mi>P</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">(</mo><mi>t</mi><mo separator="true">,</mo><mi>s</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X(t) \sim GP(m(t), k(t,s))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span><span class="mclose">))</span></span></span></span></span>
-
-<ul>
-  <li>Example: X(t) = tA, where 
-$A \sim N(0,1)$
-and t ∈ R
-    <ul>
-      <li>Mean: m(t) = E(X(t)) = tE(A) = 0</li>
-      <li>Covariance: k(t,s) = E(tAsA) = ts</li>
-    </ul>
-  </li>
-  <li>
-<strong>Gaussian process</strong> and <strong>Gaussian process regression</strong> are different.</li>
-</ul>
-
-<h2 id="15-gaussian-process-regression">
-<a class="anchor" href="#15-gaussian-process-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>15. Gaussian process regression</h2>
-
-<ul>
-  <li>A nonparametric <strong>Bayesian regression</strong> method using the properties of <strong>Gaussian processes</strong>.</li>
-  <li>Two views to interpret Gaussian process regression
-    <ul>
-      <li>Weight-space view</li>
-      <li>Function-space view</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="151-weight-space-view">
-<a class="anchor" href="#151-weight-space-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>15.1 Weight-space view</h3>
-<h3 id="152-function-space-view">
-<a class="anchor" href="#152-function-space-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>15.2 Function-space view</h3>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
