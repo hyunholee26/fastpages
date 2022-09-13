@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: 
-categories: [Machine Learning]
+categories: [Statistics]
 comments: true
 title: Gaussian Process Regression 이해를 위한 기초지식
 ---
