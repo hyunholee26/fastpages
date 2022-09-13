@@ -311,7 +311,7 @@ $$ w_{MAP} = (\lambda \sigma^2I + X^TX)^{-1}X^Ty \space \Leftrightarrow \space w
 - The find a specific value(point) of the vector $w$ that maximizes an objective function (MAP or ML)
   - ML: Only consider data model
   - MAP: Takes into account model prior
-  - 
+  
 - Bayesian inference goes one step further by characterizing uncertainty about the values in w using Bayes rule. (Bayesian inference는 파라메터의 uncertainty(=variance)를 계산할 수 있다. parameter의 uncertainty를 구하는 것과, prediction의 uncertainty를 구하는 것에 대해 추가공부 필요!)
 
 - In posterior calculation, we get an updated distribution on $w$ through the transition
