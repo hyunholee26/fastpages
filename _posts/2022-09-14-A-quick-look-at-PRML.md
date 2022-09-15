@@ -4,7 +4,7 @@ layout: post
 description: 
 categories: [Statistics]
 comments: true
-title: PRML 훑어보기
+title: GP 중심으로 PRML 훑어보기(1,2,3,6장)
 ---
 
 ## 1.1 Example: Polynomial Curve Fitting
@@ -66,6 +66,22 @@ $$w_{ML} = (\Phi^T\Phi)^{-1}\Phi^Tt$$
 - 이며, 이것을 normal equations for the least squares problem이라고 함. $\Phi$는 design matrix라고 함
 
 ## 3.3 Bayesian Linear Regression
-- 
+- posterior distribution은 다음과 같다.
+$$p(w \mid t) = N(w \mid m_N, S_N)$$
+where
+$$m_N = S_N(S_0^{-1}m_0 + \beta\Phi^Tt)$$
+$$S_N^{-1} = S_0^-1 + \beta \Phi^T \Phi$$
 
+- 여기서 $m_0 = 0$, $S_0 = \alpha^{-1}I$ 인 경우, 아래와 같이 m_N과 S_N을 구하게 된다.
+$$m_N = \beta S_N \Phi^Tt$$
+$$S_N^{-1} = \alpha I + \beta \Phi^T \Phi$$
+- bayesian linear regression에서, $\Phi(x)^T S_N \Phi(x')$를 k(x, x_n)의 형태로 변경할 수 있고, 이것은 gaussian process의 형태가 된다.
 
+## 6.1 Dual representation
+- linear regression model의 솔루션을 kernel function을 중심으로 다시 표현할 수 있음
+- 이때, gram matrix $K = \PhiPhi^T$ 이고, $K_{nm} = \Phi(x_n)^T \Phi(x_m) = k(x_n, x_m)$이며, k()는 kernel function임
+
+## 6.2 Constructing Kernels
+- basis function을 이용하여 직접 커널을 만들고, 그 커널이 valid한지 확인하는 방법과, kernel function의 valid한 특징을 이용하여 kernel function을 생성하는 방법이 있다.
+
+## 6.3 Gaussian Process Regression
