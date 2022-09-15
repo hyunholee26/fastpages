@@ -49,4 +49,23 @@ title: PRML 훑어보기
   - 빠른 계산과 데이터간의 관계의 특징을 잡아내는 것은 trade off 관계임
 - 또한 gaussian distribution은 multimodal distribution을 표현하는데 한계가 있음. 그래서 gaussian mixture model을 이후에 배울 것임
 - (8장에서 다룬다고 함, 추가로 살펴볼것!) **For instance, the Gaussian version of the Markov random field, which is widely used as a probabilistic model of images, is a Gaussian distribution over the joint space of pixel intensities but rendered tractable through the imposition of considerable structure reflecting the spatial organization of the pixels**
+-  joint distribution $p(x_a, x_b)$ is Gaussian, then the conditional distribution $p(x_a|x_b)$ will again be Gaussian. 시간관계상(?) 증명은 이해는 하지 못하고 그냥 받아들임.
+- marginal gaussian distribution( $p(x_a) = \int p(x_a, x_b) dx_b$ )도 gaussian distribution임
+- Gaussian variable에 대한 bayes theorem과 gaussian에 대한 MLE를 유도함. 시간관계상 이해하지 않고 받아들임.
+- 데이터가 특정 시간마다 업데이트 되는 경우, N번째 mean의 MLE는 N-1까지의 mean에 새로 업데이트 된 데이터와 N-1까지 mean의 차이에 대해 1/N만큼 반영한다. N이 커질수록, 차이가 동일한 경우, 업데이트 되는 값의 크기가 작아지게된다.
+- Bayesian관점으로 Gaussian 분포에서 분산을 알고, 평균을 추정해야하는 경우(MAP), posterior의 평균은 prior의 평균과 likelihood의 평균사이에 존재한다. $N = 0$이면, prior의 mean이 되고, $N \rightarrow \infty$이면 maximum likelihood의 mean이 된다. 분산은 $N=0$인 경우, prior의 분산을 따르며, $N \rightarrow \infty$이면 0이 되고 posterior분포는 maximum likelihood의 평균값에서 무한대의 값을(분산 = 0) 표현하는 분포가 된다.
+- 평균을 알고 분산을 모르는 경우, 평균과 분산을 모두 모르는 경우에 대해 각각 gaussian 분포에서 MAP방식으로 mean과 variance를 추정하는 법을 다룬다.
+
+## 3.1 Linear Basis Function Model
+- basis function( $\phi(x)$ )을 적용한 형태로 linear model을 정의함
+$$y(x, w) = w_0 + \sum_{j=1}^{M-1}w_j\phi_j(x) $$
+- basis function으로 non-linear function을 사용함으로써 비선형적 feature들을 모델이 표현할 수 있음, w에 대해 선형 모형이므로 linear 모델이라고 부름
+- chapter1에서 나온 예제는 $\phi(x)_j = x^j$ 인 경우임
+- 모형의 예측값과 실제값의 차이가 gaussian distribution을 따른다고 가정하고, MLE로 평균을 추정하면,
+$$w_{ML} = (\Phi^T\Phi)^{-1}\Phi^Tt$$
+- 이며, 이것을 normal equations for the least squares problem이라고 함. $\Phi$는 design matrix라고 함
+
+## 3.3 Bayesian Linear Regression
 - 
+
+
