@@ -4,6 +4,7 @@ layout: post
 description: 
 categories: [Statistics]
 comments: true
+author: Hyunho Lee
 title: GP 중심으로 PRML 훑어보기(1,2,3,6장)
 ---
 
