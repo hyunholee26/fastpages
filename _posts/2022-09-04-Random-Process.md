@@ -1,6 +1,6 @@
 ---
 toc: true
-layout: post
+layout: post 
 description: 
 categories: [Statistics]
 comments: true
