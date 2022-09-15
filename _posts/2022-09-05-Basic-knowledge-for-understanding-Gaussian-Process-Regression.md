@@ -4,6 +4,7 @@ layout: post
 description: 
 categories: [Statistics]
 comments: true
+author: Hyunho Lee
 title: Gaussian Process Regression 이해를 위한 기초지식
 ---
 
