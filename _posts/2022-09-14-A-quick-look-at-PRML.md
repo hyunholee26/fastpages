@@ -79,7 +79,7 @@ $$S_N^{-1} = \alpha I + \beta \Phi^T \Phi$$
 
 ## 6.1 Dual representation
 - linear regression model의 솔루션을 kernel function을 중심으로 다시 표현할 수 있음
-- 이때, gram matrix $K = \PhiPhi^T$ 이고, $K_{nm} = \Phi(x_n)^T \Phi(x_m) = k(x_n, x_m)$이며, k()는 kernel function임
+- 이때, gram matrix $K = \Phi \Phi^T$ 이고, $K_{nm} = \Phi(x_n)^T \Phi(x_m) = k(x_n, x_m)$이며, k()는 kernel function임
 
 ## 6.2 Constructing Kernels
 - basis function을 이용하여 직접 커널을 만들고, 그 커널이 valid한지 확인하는 방법과, kernel function의 valid한 특징을 이용하여 kernel function을 생성하는 방법이 있다.
