@@ -4,6 +4,7 @@ layout: post
 description: 
 categories: [Statistics]
 comments: true
+author: Hyunho Lee
 title: Gaussian Process and Gaussian Process Regression
 ---
 
