@@ -26,7 +26,25 @@ title: GP 중심으로 PRML 훑어보기(1,2,3,6장)
 - gaussian distribution을 설명함, MLE 방식으로 gaussian distribution의 variance를 구하면, $\frac{N-1}{n}$만큼 bias 됨
 - 앞서 나왔던 커브피팅 문제에서 관측데이터와 예측데이터의 차이(error 또는 residual)가 gaussian distribution을 따른다고 가정하고,
   - MAP(Maximum a posteriori estimation)를 최소로 하는 해를 구하면, 그것은 ridge regression의 해를 구하는 형태와 동일해짐
-- **(prediction distribution 추가 1.2.5)**
+
+### 1.2.5 Bayesian inference for Gaussian distribution
+- 1.2.5절 중 중요한 부분을 그대로 옮김, bayesian 관점에서 posterior를 구하는 것은 prior라는 믿음을 가지고, 데이터가 관찰된 결과(likelihood)를 반영한 분포를 구하는 것이며,
+  - 이 때, MAP을 구하는 것은 Ridge Regression의 MLE 해를 구하는 것과 동치임 
+- 예측의 관점에서, 지금까지 관찰된 데이터를 통해 계산된 posterior는 새로운 값을 예측하기 위한 prior가 되며, 새로운 데이터가 관찰될 확률이 likelihood가 되고, 두개의 곱이 prediction distribution이 된다. (이하 PRML 발췌)
+- The goal in the curve fitting problem is to be able to make predictions for the target variable $t$ given some new value of the input variable $x$ on the basis of a set of training data comprising $N$ input values $x = (x_1, \cdots , x_N)^T$ and their corresponding target values $t = (t_1, \cdots ,t_N)^T$.
+- **We can express our uncertainty over the value of the target variable using a probability distribution**. For this purpose, we shall assume that, given the value of $x$, the corresponding value of $t$ has a Gaussian distribution with a mean equal to the value $y(x, w)$ of the polynomial curve. $t = y(x, w) + \epsilon$라고 하면, $\epsilon = t - y(x,w)$이며, $\epsilon$가 gaussian distribution을 따른다고 할 경우, 데이터 $x$, 파라메터 $w$, $\epsilon$의 분산 $\sigma^2$이 주어졌을때, $t$의 분포는 다음과 같이 표현됨. (아래에서 $\beta$는 $\sigma^2$의 역수로, 정확도를 의미함, 즉 $\beta^{-1}$은 분산을 의미함. 분산이 작을수록, 그 역수의 값이 커지며, 정확도가 커짐)
+
+$$p(t \mid x, w, \beta) = N(t \mid y(x,w), \beta^{-1})$$
+
+- We now use the training data ${\textbf{x}, \textbf{t}}$ to determine the values of the unknown parameters $w$ and $\beta$ by maximum likelihood. If the data are assumed to be drawn
+independently from the distribution, then the likelihood function is given by (n개의 (x,t) 데이터가 관찰될 확률은, 각각의 데이터 발생이 독립이라고 가정할 경우(i.i.d), 아래와 같이 production으로 표현할 수 있다. logarithm을 취해서, MAP를 구할 수 있다.)
+
+$$p(\textbf{t} \mid \textbf{x}, w, \beta) = \prod_{n=1}^{N}N(t_n \mid y(x_n, \textbf{w}), \beta^{-1})$$
+
+- It is convenient to maximize the logarithm of the likelihood function. Substituting for the form of the Gaussian distribution, we obtain the log likelihood function in the form
+
+$$ln p(\textbf{t} \mid \textbf{x}, w, \beta) = - \frac{\beta}{2} \sum_{n=1}^N {y(x_n, \textbf{w}) - t_n}^2 + \frac{N}{2}ln \beta - \frac{N}{2}ln(2 \pi)$$
+
 - 베이지안 인퍼런스를 위해서는 prediction distribution을 구해야함, prediction distribution은 production rule에 의해 
   - likelihood와 posterior(갱신된 prior)의 곱으로 표현되며, posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 
   - gausssian process 형태인( $N(t \mid m(x), s^2(x)$ )로 정리됨
@@ -51,7 +69,7 @@ title: GP 중심으로 PRML 훑어보기(1,2,3,6장)
   - 빠른 계산과 데이터간의 관계의 특징을 잡아내는 것은 trade off 관계임
 - 또한 gaussian distribution은 multimodal distribution을 표현하는데 한계가 있음. 그래서 gaussian mixture model을 이후에 배울 것임
 - (8장에서 다룬다고 함, 추가로 살펴볼것!) **For instance, the Gaussian version of the Markov random field, which is widely used as a probabilistic model of images, is a Gaussian distribution over the joint space of pixel intensities but rendered tractable through the imposition of considerable structure reflecting the spatial organization of the pixels**
--  joint distribution $p(x_a, x_b)$ is Gaussian, then the conditional distribution $p(x_a|x_b)$ will again be Gaussian. 시간관계상(?) 증명은 이해는 하지 못하고 그냥 받아들임.
+-  joint distribution $p(x_a, x_b)$ is Gaussian, then the conditional distribution $p(x_a \mid x_b)$ will again be Gaussian. 시간관계상(?) 증명은 이해는 하지 못하고 그냥 받아들임.
 - marginal gaussian distribution( $p(x_a) = \int p(x_a, x_b) dx_b$ )도 gaussian distribution임
 - Gaussian variable에 대한 bayes theorem과 gaussian에 대한 MLE를 유도함. 시간관계상 이해하지 않고 받아들임.
 - 데이터가 특정 시간마다 업데이트 되는 경우, N번째 mean의 MLE는 N-1까지의 mean에 새로 업데이트 된 데이터와 N-1까지 mean의 차이에 대해 1/N만큼 반영한다. N이 커질수록, 차이가 동일한 경우, 업데이트 되는 값의 크기가 작아지게된다.
