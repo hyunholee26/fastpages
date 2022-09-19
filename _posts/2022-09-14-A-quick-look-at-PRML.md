@@ -25,7 +25,8 @@ title: GP 중심으로 PRML 훑어보기(1,2,3,6장)
   - 다만 베이지안은 계산상의 편의를 위해(prior와 likelihood를 곱해야하므로) conjugacy 관계인 분포가 많이 사용됨
 - gaussian distribution을 설명함, MLE 방식으로 gaussian distribution의 variance를 구하면, $\frac{N-1}{n}$만큼 bias 됨
 - 앞서 나왔던 커브피팅 문제에서 관측데이터와 예측데이터의 차이(error 또는 residual)가 gaussian distribution을 따른다고 가정하고,
-  - MAP를 최소로 하는 해를 구하면, 그것은 ridge regression의 해를 구하는 형태와 동일해짐
+  - MAP(Maximum a posteriori estimation)를 최소로 하는 해를 구하면, 그것은 ridge regression의 해를 구하는 형태와 동일해짐
+- **(prediction distribution 추가 1.2.5)**
 - 베이지안 인퍼런스를 위해서는 prediction distribution을 구해야함, prediction distribution은 production rule에 의해 
   - likelihood와 posterior(갱신된 prior)의 곱으로 표현되며, posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 
   - gausssian process 형태인( $N(t \mid m(x), s^2(x)$ )로 정리됨
@@ -78,11 +79,15 @@ $$m_N = \beta S_N \Phi^Tt$$
 $$S_N^{-1} = \alpha I + \beta \Phi^T \Phi$$
 - bayesian linear regression에서, $\Phi(x)^T S_N \Phi(x')$를 k(x, x_n)의 형태로 변경할 수 있고, 이것은 gaussian process의 형태가 된다.
 
+- **(bayesian inference for guassian 추가)**
+
 ## 6.1 Dual representation
 - linear regression model의 솔루션을 kernel function을 중심으로 다시 표현할 수 있음
 - 이때, gram matrix $K = \Phi \Phi^T$ 이고, $K_{nm} = \Phi(x_n)^T \Phi(x_m) = k(x_n, x_m)$이며, k()는 kernel function임
+- **(covariance를 kernel function으로 표현할 수 있음을 추가)** 
 
 ## 6.2 Constructing Kernels
 - basis function을 이용하여 직접 커널을 만들고, 그 커널이 valid한지 확인하는 방법과, kernel function의 valid한 특징을 이용하여 kernel function을 생성하는 방법이 있다.
 
-## 6.3 Gaussian Process Regression
+## 6.4 Gaussian Process Regression
+ - **(내용 요약 추가)**
