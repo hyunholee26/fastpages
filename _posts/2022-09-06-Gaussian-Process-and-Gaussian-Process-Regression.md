@@ -5,7 +5,7 @@ description:
 categories: [Statistics]
 comments: true
 author: Hyunho Lee
-title: Gaussian Process and Gaussian Process Regression
+title: Gaussian Process
 ---
 
 ## 0. 들어가며
@@ -25,7 +25,7 @@ Spatiotemporal Analysis를 수강하면서, Gaussian Process를 공부하기 위
 
 $$f(x) \sim GP(\mu(x), k(x, x'))$$
 
-여기서 공분산 $k(x,x')$ 는 다음과 같다.
+여기서 공분산 $k(x,x')$ 는 다음과 같다. k는 kernel function을 선택할 수 있다.
 
 $$k(x,x') = E[(f(x) - \mu(x))(f(x') - \mu(x'))]$$ 
 
