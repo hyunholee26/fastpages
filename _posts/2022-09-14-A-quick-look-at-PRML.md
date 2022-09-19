@@ -43,7 +43,19 @@ $$p(\textbf{t} \mid \textbf{x}, w, \beta) = \prod_{n=1}^{N}N(t_n \mid y(x_n, \te
 
 - It is convenient to maximize the logarithm of the likelihood function. Substituting for the form of the Gaussian distribution, we obtain the log likelihood function in the form
 
-$$ln p(\textbf{t} \mid \textbf{x}, w, \beta) = - \frac{\beta}{2} \sum_{n=1}^N {y(x_n, \textbf{w}) - t_n}^2 + \frac{N}{2}ln \beta - \frac{N}{2}ln(2 \pi)$$
+$$ln \space p(\textbf{t} \mid \textbf{x}, w, \beta) = - \frac{\beta}{2} \sum_{n=1}^N {y(x_n, \textbf{w}) - t_n}^2 + \frac{N}{2}ln \beta - \frac{N}{2}ln(2 \pi)$$
+
+- We can first determine the parameter vector $w_{ML}$ governing the mean and subsequently use this to find the precision $\beta_{ML}$ as was the case for the simple Gaussian distribution. 위 식을 이용하면, $w_{ML}$과 $\beta^{-1}$을 구할 수 있다. (구하는 수식은 PRML 참고)
+
+- Having determined the parameters $w$ and $\beta$, we can now make predictions for new values of $x$. Because we now have a probabilistic model, these are expressed
+in terms of the predictive distribution that gives the probability distribution over $t$, rather than simply a point estimate, and is obtained by substituting the maximum likelihood parameters into $p(t \mid x, w, \beta) = N(t \mid y(x,w), \beta^{-1})$ to give
+
+$$p(t \mid x, w_{ML}, \beta_{ML}) = N(t \mid y(x,w_{ML}), \beta_{ML}^{-1})$$
+
+- Now let us take a step towards a more Bayesian approach and introduce a prior distribution over the polynomial coefficients $w$. 
+- For simplicity, let us consider a Gaussian distribution of the form,
+
+$$p(w \mid \alpha) = N(w \mid 0, \alpha^{-1}I) = (\frac{\alpha}{2\pi})^{(M+1)/2}exp(-\frac{\alpha}{2}w^Tw)$$
 
 - 베이지안 인퍼런스를 위해서는 prediction distribution을 구해야함, prediction distribution은 production rule에 의해 
   - likelihood와 posterior(갱신된 prior)의 곱으로 표현되며, posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 
