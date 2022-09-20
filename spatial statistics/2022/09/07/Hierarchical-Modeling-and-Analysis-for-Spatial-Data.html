@@ -4,22 +4,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Hierarchical Modeling and Analysis for Spatial Data (Chap2) - (작성중) | Hyunho Lee</title>
+<title>Hierarchical Modeling and Analysis for Spatial Data - 주요개념 (작성중) | Hyunho Lee</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Hierarchical Modeling and Analysis for Spatial Data (Chap2) - (작성중)" />
+<meta property="og:title" content="Hierarchical Modeling and Analysis for Spatial Data - 주요개념 (작성중)" />
 <meta name="author" content="Hyunho Lee" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다. 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" />
-<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다. 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" />
-<link rel="canonical" href="https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data-Chap2.html" />
-<meta property="og:url" content="https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data-Chap2.html" />
+<meta name="description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, 주요개념을 정리하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다. 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" />
+<meta property="og:description" content="0. 들어가며 Spatiotemporal Analysis를 수강하면서, 주요개념을 정리하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다. 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false" />
+<link rel="canonical" href="https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data.html" />
+<meta property="og:url" content="https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data.html" />
 <meta property="og:site_name" content="Hyunho Lee" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-09-07T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Hierarchical Modeling and Analysis for Spatial Data (Chap2) - (작성중)" />
+<meta property="twitter:title" content="Hierarchical Modeling and Analysis for Spatial Data - 주요개념 (작성중)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunho Lee"},"dateModified":"2022-09-07T00:00:00-05:00","datePublished":"2022-09-07T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다. 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false","headline":"Hierarchical Modeling and Analysis for Spatial Data (Chap2) - (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data-Chap2.html"},"url":"https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data-Chap2.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunho Lee"},"dateModified":"2022-09-07T00:00:00-05:00","datePublished":"2022-09-07T00:00:00-05:00","description":"0. 들어가며 Spatiotemporal Analysis를 수강하면서, 주요개념을 정리하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다. 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false","headline":"Hierarchical Modeling and Analysis for Spatial Data - 주요개념 (작성중)","mainEntityOfPage":{"@type":"WebPage","@id":"https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data.html"},"url":"https://hyunholee26.github.io/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hyunholee26.github.io/fastpages/feed.xml" title="Hyunho Lee" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -105,7 +105,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hierarchical Modeling and Analysis for Spatial Data (Chap2) - (작성중)</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-07T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Hierarchical Modeling and Analysis for Spatial Data - 주요개념 (작성중)</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-07T00:00:00-05:00" itemprop="datePublished">
         Sep 7, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -140,9 +140,11 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#2-isotropy">2. Isotropy</a></li>
+<li class="toc-entry toc-h2"><a href="#3-morans-i-and-gearys-c">3. Moran’s I and Geary’s C</a></li>
+<li class="toc-entry toc-h2"><a href="#4-simultaneous-autoregressivesar-and-conditional-autoregressivecar">4. Simultaneous Autoregressive(SAR) and Conditional Autoregressive(CAR)</a></li>
 </ul><h2 id="0-들어가며">
 <a class="anchor" href="#0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>0. 들어가며</h2>
-<p>Spatiotemporal Analysis를 수강하면서, 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다.</p>
+<p>Spatiotemporal Analysis를 수강하면서, 주요개념을 정리하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다.</p>
 <ul>
   <li>참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false</li>
 </ul>
@@ -193,6 +195,22 @@ window.onload = wrap_img;
   <li>Isotropic variograms are popular because of their simplicity, interpretability, etc.</li>
 </ul>
 
+<h2 id="3-morans-i-and-gearys-c">
+<a class="anchor" href="#3-morans-i-and-gearys-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Moran’s I and Geary’s C</h2>
+
+<h2 id="4-simultaneous-autoregressivesar-and-conditional-autoregressivecar">
+<a class="anchor" href="#4-simultaneous-autoregressivesar-and-conditional-autoregressivecar" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Simultaneous Autoregressive(SAR) and Conditional Autoregressive(CAR)</h2>
+<p>In the case of time-series data, SAR and CAR are same model. How about spatial data?</p>
+
+<ul>
+  <li>
+    <p>SAR</p>
+  </li>
+  <li>
+    <p>CAR</p>
+  </li>
+</ul>
+
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
         repo="hyunholee26/fastpages"
@@ -202,7 +220,7 @@ window.onload = wrap_img;
         async>
 </script>
 
-<a class="u-url" href="/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data-Chap2.html" hidden></a>
+<a class="u-url" href="/fastpages/spatial%20statistics/2022/09/07/Hierarchical-Modeling-and-Analysis-for-Spatial-Data.html" hidden></a>
 </article>
 
 
