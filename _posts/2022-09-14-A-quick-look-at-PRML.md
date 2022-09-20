@@ -126,8 +126,6 @@ $$m_N = \beta S_N \Phi^Tt$$
 $$S_N^{-1} = \alpha I + \beta \Phi^T \Phi$$
 - bayesian linear regression에서, $\Phi(x)^T S_N \Phi(x')$를 k(x, x_n)의 형태로 변경할 수 있고, 이것은 gaussian process의 형태가 된다.
 
-- **(bayesian inference for guassian 추가)**
-
 ## 6.1 Dual representation
 - linear regression model의 솔루션을 kernel function을 중심으로 다시 표현할 수 있음
 - 이때, gram matrix $K = \Phi \Phi^T$ 이고, $K_{nm} = \Phi(x_n)^T \Phi(x_m) = k(x_n, x_m)$이며, k()는 kernel function임
