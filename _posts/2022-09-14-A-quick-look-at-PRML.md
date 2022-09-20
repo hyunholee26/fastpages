@@ -48,7 +48,7 @@ $$ln \space p(\textbf{t} \mid \textbf{x}, w, \beta) = - \frac{\beta}{2} \sum_{n=
 - We can first determine the parameter vector $w_{ML}$ governing the mean and subsequently use this to find the precision $\beta_{ML}$ as was the case for the simple Gaussian distribution. 위 식을 이용하면, $w_{ML}$과 $\beta^{-1}$을 구할 수 있다. (MLE를 구하는 것임, 구하는 수식은 PRML 참고)
 
 - Having determined the parameters $w$ and $\beta$, we can now make predictions for new values of $x$. Because we now have a probabilistic model, these are expressed
-in terms of the predictive distribution that gives the probability distribution over $t$, rather than simply a point estimate, and is obtained by substituting the maximum likelihood parameters into $p(t \mid x, w, \beta) = N(t \mid y(x,w), \beta^{-1})$ to give
+in terms of the predictive distribution that gives the probability distribution over $t$, rather than simply a point estimate, and is obtained by substituting the maximum likelihood parameters into $p(t \mid x, w, \beta) = N(t \mid y(x,w), \beta^{-1})$ to give (MLE방식은 데이터를 바탕으로 파라메터를 결정하고, 그 파라메터를 이용하여 새로운 값을 예측하는 방식임. 데이터가 우리의 믿음과 달리 편향되어 관찰된 경우, 파라메터는 관찰데이터에 대해 overfitting 될 수 있음)
 
 $$p(t \mid x, w_{ML}, \beta_{ML}) = N(t \mid y(x,w_{ML}), \beta_{ML}^{-1})$$
 
@@ -57,7 +57,7 @@ $$p(t \mid x, w_{ML}, \beta_{ML}) = N(t \mid y(x,w_{ML}), \beta_{ML}^{-1})$$
 
 $$p(w \mid \alpha) = N(w \mid 0, \alpha^{-1}I) = (\frac{\alpha}{2\pi})^{(M+1)/2}exp(-\frac{\alpha}{2}w^Tw)$$
 
-- where $alpha$ is the precision of the distribution(분산을 의미함), and $M+1$ is the total number of elements in the vector $w$ for an $M$th order polynomial. Variables such as $\alpha$, which control the distribution of model parameters, are called hyperparameters. 
+- where $alpha$ is the precision of the distribution(분산을 의미함), and $M+1$ is the total number of elements in the vector $w$ for an $M$ th order polynomial. Variables such as $\alpha$, which control the distribution of model parameters, are called hyperparameters. 
 - Using Bayes’ theorem, the posterior distribution for w is proportional to the product of the prior distribution and the likelihood function
 
 $$p(w \mid x, t, \alpha, \beta) \propto p(t \mid x, w, \beta)p(w \mid \alpha)$$
@@ -125,6 +125,17 @@ $$S_N^{-1} = S_0^-1 + \beta \Phi^T \Phi$$
 $$m_N = \beta S_N \Phi^Tt$$
 $$S_N^{-1} = \alpha I + \beta \Phi^T \Phi$$
 - bayesian linear regression에서, $\Phi(x)^T S_N \Phi(x')$를 k(x, x_n)의 형태로 변경할 수 있고, 이것은 gaussian process의 형태가 된다.
+
+# 6. Kernel function
+- Many linear parametric models can be re-cast into an equivalent ‘dual representation’ in which the predictions are also based on linear combinations of a kernel
+function evaluated at the training data points. As we shall see, for models which are based on a fixed nonlinear feature space mapping $\phi(x)$, the kernel function is given by the relation
+
+$$k(x, x') = \phi(x)^T\phi(x') $$
+
+- $k(x, x') = k(x - x')$ are know as a stationary keranels, because they are invariant to translations in input space. 
+- A further specialization involves homogeneous kernels, also known as radial basis functions, which depend only on the magnitude of the distance (typically
+Euclidean) between the arguments so that $k(x, x') = k(\lVert x − x \rVert)$
+
 
 ## 6.1 Dual representation
 - linear regression model의 솔루션을 kernel function을 중심으로 다시 표현할 수 있음
