@@ -45,7 +45,7 @@ $$p(\textbf{t} \mid \textbf{x}, w, \beta) = \prod_{n=1}^{N}N(t_n \mid y(x_n, \te
 
 $$ln \space p(\textbf{t} \mid \textbf{x}, w, \beta) = - \frac{\beta}{2} \sum_{n=1}^N {y(x_n, \textbf{w}) - t_n}^2 + \frac{N}{2}ln \beta - \frac{N}{2}ln(2 \pi)$$
 
-- We can first determine the parameter vector $w_{ML}$ governing the mean and subsequently use this to find the precision $\beta_{ML}$ as was the case for the simple Gaussian distribution. 위 식을 이용하면, $w_{ML}$과 $\beta^{-1}$을 구할 수 있다. (구하는 수식은 PRML 참고)
+- We can first determine the parameter vector $w_{ML}$ governing the mean and subsequently use this to find the precision $\beta_{ML}$ as was the case for the simple Gaussian distribution. 위 식을 이용하면, $w_{ML}$과 $\beta^{-1}$을 구할 수 있다. (MLE를 구하는 것임, 구하는 수식은 PRML 참고)
 
 - Having determined the parameters $w$ and $\beta$, we can now make predictions for new values of $x$. Because we now have a probabilistic model, these are expressed
 in terms of the predictive distribution that gives the probability distribution over $t$, rather than simply a point estimate, and is obtained by substituting the maximum likelihood parameters into $p(t \mid x, w, \beta) = N(t \mid y(x,w), \beta^{-1})$ to give
@@ -64,7 +64,7 @@ $$p(w \mid x, t, \alpha, \beta) \propto p(t \mid x, w, \beta)p(w \mid \alpha)$$
 
 - 여기서 posterior를 최대로 하는 w를 구하는 것을 MAP이며, 이것은 ridge regression의 솔루션과 동치이다.
 
-- 베이지안 인퍼런스를 위해서는 prediction distribution인 $p(t \mid x_{new}, x, t)$을 구해야함, prediction distribution은 production rule에 의해 likelihood와 posterior(갱신된 prior)의 곱으로 표현된다. $p(t \mid x_{new}, w)$는 guassian distribution을 따르는 새로운 관찰 x_{new}을 입력으로 하는 예측모델의 $\epsilon$d의 분포이며, p(w \mid x, t)는 갱신된 posterior distribution이다. 
+- 베이지안 인퍼런스를 위해서는 prediction distribution인 $p(t \mid x_{new}, x, t)$을 구해야함, prediction distribution은 production rule에 의해 likelihood와 posterior(갱신된 prior)의 곱으로 표현된다. $p(t \mid x_{new}, w)$는 guassian distribution을 따르는 새로운 관찰 $x_{new}$을 입력으로 하는 예측모델의 $\epsilon$의 분포이며, p(w \mid x, t)는 갱신된 posterior distribution이다. 
 
 $$p(t \mid x_{new}, x, t) = \int p(t \mid x_{new}, w)p(w \mid x, t)dw$$
 
