@@ -5,11 +5,11 @@ description:
 categories: [Spatial Statistics]
 comments: true
 author: Hyunho Lee
-title: Hierarchical Modeling and Analysis for Spatial Data (Chap2) - (작성중)
+title: Hierarchical Modeling and Analysis for Spatial Data - 주요개념 (작성중)
 ---
 
 ## 0. 들어가며
-Spatiotemporal Analysis를 수강하면서, 공부하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다.
+Spatiotemporal Analysis를 수강하면서, 주요개념을 정리하기 위해 참고사이트의 내용을 다시 정리한 글입니다. 대부분의 내용은 참고한 사이트를 따르며, 일부 제가 이해한 내용을 추가적으로 작성하였습니다.
 - 참고자료 : https://books.google.dm/books?id=YqpZKTp-Wh0C&printsec=frontcover#v=onepage&q&f=false
 
 ## 1. Stationarity
@@ -46,3 +46,13 @@ If the semivariogram function $\gamma(h)$ depends upon the separation vector onl
 
  - If a process is intrinsically stationary and isotropic, it is called homogeneous
  - Isotropic variograms are popular because of their simplicity, interpretability, etc.
+
+## 3. Moran's I and Geary's C
+
+## 4. Simultaneous Autoregressive(SAR) and Conditional Autoregressive(CAR)
+In the case of time-series data, SAR and CAR are same model. How about spatial data?
+
+ - SAR
+
+
+ - CAR
