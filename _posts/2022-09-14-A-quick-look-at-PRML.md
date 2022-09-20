@@ -57,11 +57,28 @@ $$p(t \mid x, w_{ML}, \beta_{ML}) = N(t \mid y(x,w_{ML}), \beta_{ML}^{-1})$$
 
 $$p(w \mid \alpha) = N(w \mid 0, \alpha^{-1}I) = (\frac{\alpha}{2\pi})^{(M+1)/2}exp(-\frac{\alpha}{2}w^Tw)$$
 
-- 베이지안 인퍼런스를 위해서는 prediction distribution을 구해야함, prediction distribution은 production rule에 의해 
-  - likelihood와 posterior(갱신된 prior)의 곱으로 표현되며, posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 
+- where $alpha$ is the precision of the distribution(분산을 의미함), and $M+1$ is the total number of elements in the vector $w$ for an $M$th order polynomial. Variables such as $\alpha$, which control the distribution of model parameters, are called hyperparameters. 
+- Using Bayes’ theorem, the posterior distribution for w is proportional to the product of the prior distribution and the likelihood function
+
+$$p(w \mid x, t, \alpha, \beta) \propto p(t \mid x, w, \beta)p(w \mid \alpha)$$
+
+- 여기서 posterior를 최대로 하는 w를 구하는 것을 MAP이며, 이것은 ridge regression의 솔루션과 동치이다.
+
+- 베이지안 인퍼런스를 위해서는 prediction distribution인 $p(t \mid x_{new}, x, t)$을 구해야함, prediction distribution은 production rule에 의해 likelihood와 posterior(갱신된 prior)의 곱으로 표현된다. $p(t \mid x_{new}, w)$는 guassian distribution을 따르는 새로운 관찰 x_{new}을 입력으로 하는 예측모델의 $\epsilon$d의 분포이며, p(w \mid x, t)는 갱신된 posterior distribution이다. 
+
+$$p(t \mid x_{new}, x, t) = \int p(t \mid x_{new}, w)p(w \mid x, t)dw$$
+
+- posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 
   - gausssian process 형태인( $N(t \mid m(x), s^2(x)$ )로 정리됨
   - 즉, bayesian infrerence를 위해 구한 prediction distribution은 gaussian process로 표현됨.
+$$m(x) = \beta \phi(x)^TS \sum_{n=1}^N \phi(x_n)t_n$$
 
+$$s^2(x) = \beta^{-1} + \phi(x)^TS\phi(x)$$
+
+- 여기서 matrix S는 
+
+$$S^{-1} = \alphaI + \beta \sum_{n=1}^N \phi(x_n)\phi(x)^T$$
+   
 ## 2.1 binary variable
 - Conjugate Prior : A prior is conjugate for the likelihood function if the posterior is of the sam form as the prior.
 - binomial 분포와 beta분포, bernuii 분포와 beta분포는 각각 conjugacy임
