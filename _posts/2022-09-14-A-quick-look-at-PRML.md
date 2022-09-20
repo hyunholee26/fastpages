@@ -140,10 +140,10 @@ Euclidean) between the arguments so that $k(x, x') = k(\lVert x − x \rVert)$
 ## 6.1 Dual representation
 - linear regression model의 솔루션을 kernel function을 중심으로 다시 표현할 수 있음
 - 이때, gram matrix $K = \Phi \Phi^T$ 이고, $K_{nm} = \Phi(x_n)^T \Phi(x_m) = k(x_n, x_m)$이며, k()는 kernel function임
-- **(covariance를 kernel function으로 표현할 수 있음을 추가)** 
+- The advantage of the dual formulation, as we shall see, is that it is expressed entirely in terms of the kernel function k(x, x), We can therefore work directly in terms of kernels and avoid the explicit introduction of the feature vector \phi(x), which allows us implicitly to use feature spaces of high, even infinite, dimensionality. 적절한 Kernel function을 이용하여 Covariance Matrix로서 동작하게끔 할 수 있다. 이렇게 하면 무한한 covariance도 다룰 수 있다. 왜냐하면 kernel function은 함수니까 무한차원을 표현할 수 있다. 
 
 ## 6.2 Constructing Kernels
 - basis function을 이용하여 직접 커널을 만들고, 그 커널이 valid한지 확인하는 방법과, kernel function의 valid한 특징을 이용하여 kernel function을 생성하는 방법이 있다.
 
 ## 6.4 Gaussian Process Regression
- - **(내용 요약 추가)**
+ - **(6.4.1 내용 요약 추가)**
