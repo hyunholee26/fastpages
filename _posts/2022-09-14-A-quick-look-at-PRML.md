@@ -64,7 +64,7 @@ $$p(w \mid x, t, \alpha, \beta) \propto p(t \mid x, w, \beta)p(w \mid \alpha)$$
 
 - 여기서 posterior를 최대로 하는 w를 구하는 것을 MAP이며, 이것은 ridge regression의 솔루션과 동치이다.
 
-- 베이지안 인퍼런스를 위해서는 prediction distribution인 $p(t \mid x_{new}, x, t)$을 구해야함, prediction distribution은 production rule에 의해 likelihood와 posterior(갱신된 prior)의 곱으로 표현된다. $p(t \mid x_{new}, w)$는 guassian distribution을 따르는 새로운 관찰 $x_{new}$을 입력으로 하는 예측모델의 $\epsilon$의 분포이며, p(w \mid x, t)는 갱신된 posterior distribution이다. 
+- 베이지안 인퍼런스를 위해서는 prediction distribution인 $p(t \mid x_{new}, x, t)$을 구해야함, prediction distribution은 production rule에 의해 likelihood와 posterior(갱신된 prior)의 곱으로 표현된다. $p(t \mid x_{new}, w)$는 guassian distribution을 따르는 새로운 관찰 $x_{new}$을 입력으로 하는 예측모델의 $\epsilon$의 분포이며, $p(w \mid x, t)$는 갱신된 posterior distribution이다. 
 
 $$p(t \mid x_{new}, x, t) = \int p(t \mid x_{new}, w)p(w \mid x, t)dw$$
 
@@ -77,7 +77,7 @@ $$s^2(x) = \beta^{-1} + \phi(x)^TS\phi(x)$$
 
 - 여기서 matrix S는 
 
-$$S^{-1} = \alphaI + \beta \sum_{n=1}^N \phi(x_n)\phi(x)^T$$
+$$S^{-1} = \alpha I + \beta \sum_{n=1}^N \phi(x_n)\phi(x)^T$$
    
 ## 2.1 binary variable
 - Conjugate Prior : A prior is conjugate for the likelihood function if the posterior is of the sam form as the prior.
