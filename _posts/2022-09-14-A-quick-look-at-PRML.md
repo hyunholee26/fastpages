@@ -68,9 +68,7 @@ $$p(w \mid x, t, \alpha, \beta) \propto p(t \mid x, w, \beta)p(w \mid \alpha)$$
 
 $$p(t \mid x_{new}, x, t) = \int p(t \mid x_{new}, w)p(w \mid x, t)dw$$
 
-- posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 
-  - gausssian process 형태인( $N(t \mid m(x), s^2(x)$ )로 정리됨
-  - 즉, bayesian infrerence를 위해 구한 prediction distribution은 gaussian process로 표현됨.
+- posterior가 gaussian distribution인 경우, prediction distribution을 gaussian form으로 정리하면 다음과 같이( $N(t \mid m(x), s^2(x)$ )로 정리됨
 $$m(x) = \beta \phi(x)^TS \sum_{n=1}^N \phi(x_n)t_n$$
 
 $$s^2(x) = \beta^{-1} + \phi(x)^TS\phi(x)$$
